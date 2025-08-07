@@ -61,39 +61,49 @@ const ContactForm: React.FC = () => {
     }
   };
 
-  const contactInfo = [
+const contactInfo = [
     {
-      icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-        </svg>
-      ),
-      label: 'Email',
-      value: 'rosexmee1122@gmail.com',
-      link: 'mailto:rosexmee1122@gmail.com'
+        icon: (
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            </svg>
+        ),
+        label: 'Email',
+        value: 'rosexmee1122@gmail.com',
+        link: 'mailto:rosexmee1122@gmail.com'
     },
     {
-      icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-        </svg>
-      ),
-      label: 'Location',
-      value: 'Cambodia, Asia',
-      link: null
+        icon: (
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+            </svg>
+        ),
+        label: 'Location',
+        value: 'Cambodia, Phnom Penh',
+        link: null
     },
     {
-      icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-        </svg>
-      ),
-      label: 'LinkedIn',
-      value: 'Connect with me',
-      link: 'https://www.linkedin.com/in/phon-ramy-81025a2a9/'
+        icon: (
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+        ),
+        label: 'LinkedIn',
+        value: 'Connect with me',
+        link: 'https://www.linkedin.com/in/phon-ramy-81025a2a9/'
+    },
+    {
+        icon: (
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10c0-5.523-4.477-10-10-10zm4.93 7.36l-1.43 6.76c-.11.5-.4.62-.81.39l-2.25-1.66-1.09 1.05c-.12.12-.23.23-.47.23l.17-2.41 4.39-3.97c.19-.17-.04-.27-.29-.1l-5.42 3.41-2.33-.73c-.51-.16-.52-.51.11-.75l9.1-3.5c.42-.16.79.1.65.74z"/>
+            </svg>
+        ),
+        label: 'Telegram',
+        value: 'RaMee',
+        link: 'https://t.me/Myomeee'
     }
-  ];
+];
 
   return (
     <section className="py-20 px-4 max-w-6xl mx-auto">
@@ -146,7 +156,7 @@ const ContactForm: React.FC = () => {
           <GlassCard>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-              <h4 className="text-lg font-semibold text-white">Available for Freelance</h4>
+              <h4 className="text-lg font-semibold text-white">Available for job opportunities</h4>
             </div>
             <p className="text-white/80">
               Currently accepting new projects and collaborations. 

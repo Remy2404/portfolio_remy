@@ -20,7 +20,7 @@ const Projects: React.FC = () => {
         "A comprehensive AI-powered application built with modern JavaScript. Features include intelligent conversation capabilities, responsive design, and optimized performance.",
       image:
         "https://thfvnext.bing.com/th/id/OIP.4NbDnMAiaI6NxSz0Z1iJNAHaEK?w=303&h=180&c=7&r=0&o=7&cb=thfvnext&dpr=1.3&pid=1.7&rm=3",
-      technologies: ["JavaScript", "React", "Node.js", "AI/ML"],
+      technologies: ["JavaScript", "React", "Express", "AI/LLM"],
       githubUrl: "https://github.com/Remy2404/Gemini-ai-completed-pp",
       stars: 10,
       featured: true,
@@ -31,7 +31,7 @@ const Projects: React.FC = () => {
         "A full-stack learning resource for Python programming, covering fundamentals to advanced concepts with practical examples and projects.",
       image:
         "https://thfvnext.bing.com/th/id/OIP.RTQdRj1eX2m0VBsHT8cYSQHaE8?w=260&h=180&c=7&r=0&o=7&cb=thfvnext&dpr=1.3&pid=1.7&rm=3",
-      technologies: ["Python", "Django", "Flask", "Data Science"],
+      technologies: ["Python","Flask", "Data Science"],
       githubUrl: "https://github.com/Remy2404/python_complete_full_course",
       stars: 4,
       featured: true,
@@ -42,7 +42,7 @@ const Projects: React.FC = () => {
         "Collection of Java applications demonstrating object-oriented programming principles, design patterns, and enterprise development practices.",
       image:
         "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=500&h=300&fit=crop",
-      technologies: ["Java", "Spring Boot", "Maven", "JUnit"],
+      technologies: ["Java"],
       githubUrl: "https://github.com/Remy2404/JAVA_PORJECT",
       stars: 3,
       featured: false,
@@ -53,17 +53,17 @@ const Projects: React.FC = () => {
         "An intelligent resume analysis tool that uses AI to provide feedback on resume content, structure, and optimization suggestions.",
       image:
         "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=500&h=300&fit=crop",
-      technologies: ["Python", "AI/ML", "NLP", "React"],
+      technologies: ["Python", "AI/LLM", "React"],
       githubUrl: "https://github.com/Remy2404/ai_resume_analyser",
       featured: false,
     },
     {
       title: "Polymind",
       description:
-        "A collaborative platform for knowledge sharing and team productivity. Features real-time collaboration, project management, and intelligent insights.",
+        "Polymind is a powerful multi-modal Telegram bot built with Gemini, DeepSeek, OpenRouter, and over 50 cutting-edge AI models. It offers seamless conversational intelligence, Mermaid diagram rendering, PDF/DOCX analysis, image generation, and collaborative tools—all in a single bot interface.",
       image:
-        "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=500&h=300&fit=crop",
-      technologies: ["TypeScript", "React", "Node.js", "PostgreSQL"],
+        "https://cdn5.telesco.pe/file/kiltU8aAw4XqBSMCpEHdBKYO3RaAIqq27e4p41midH7CWP77krzeH_8HzndjhD0JPT7CUbmuCBkFTSRyOc13XrBi5LsW60ILG_vOnb_FYEDAZbpRlYO7w1pNoQNhv5yMjlfTP6l70ZRBBl2W_1_swpe8cqPTXeMLO_rmtnz17__xPNA_UG64wcvY40rM0HlXKzvBMBHPUX9gzB8vsq7HUaB3PSxX-ewSBv5MNY6CtxeYjo0gHmG9lBaV0Y9KFDZ_37a_oliHY9rHufQPSxWRLmrRdZDS4Vc7Fh8Y0xsohfNvFwhc73RzZVbs1TbpG62-mhnu4QFBdGYxYEGsqMy-Bw.jpg",
+      technologies: ["python", "FastAPI", "MongoDB", "ffmpeg" , "Telegram Bot API" , "OpenRouter"],
       githubUrl: "https://github.com/Remy2404/Polymind",
       featured: true,
       stars: 5,
@@ -74,7 +74,7 @@ const Projects: React.FC = () => {
         "A full-stack e-commerce application for a coffee shop, featuring product catalog, shopping cart, and payment integration.",
       image:
         "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&h=300&fit=crop",
-      technologies: ["React", "Node.js", "Express", "MongoDB"],
+      technologies: ["java", "android", "supabase", "python" , "fastapi"],
       githubUrl: "https://github.com/Remy2404/coffeecorner",
       featured: false,
     },
