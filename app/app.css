@@ -1,15 +1,122 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* --- Cosmic Emerald Theme --- */
+
+  /* Custom fonts & breakpoints (keep as is) */
+  --font-family-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-family-display: "Satoshi", "sans-serif";
+  --breakpoint-3xl: 1920px;
+
+  /* New Neon Accent Colors */
+  --color-neon-green: oklch(85% 0.24 150);  /* Bright Emerald/Teal */
+  --color-neon-gold: oklch(85% 0.15 90);    /* Sharp Gold */
+
+  /* New DaisyUI Core Colors */
+  --color-primary: oklch(80% 0.2 165);      /* Deep Teal */
+  --color-secondary: oklch(85% 0.15 90);    /* Gold as secondary */
+  --color-accent: oklch(88% 0.18 95);       /* Lighter, warmer yellow for accents */
+  --color-neutral: oklch(0.25 0.01 180);    /* Dark, slightly desaturated teal */
+  --color-base-100: oklch(0.12 0 0);        /* Near-black base */
+  --color-info: oklch(0.7 0.15 220);
+  --color-success: oklch(0.7 0.15 140);
+  --color-warning: oklch(0.8 0.15 60);
+  --color-error: oklch(0.7 0.15 20);
 }
 
+/* New Background Gradient */
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+  background: linear-gradient(135deg, oklch(12% 0.01 180) 0%, oklch(10% 0 0) 100%); /* Dark Teal to Black */
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: var(--font-family-sans);
+}
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+/* Glassmorphism Base Styles */
+.glass {
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+}
+
+.glass-dark {
+  backdrop-filter: blur(16px);
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+}
+
+.glass-card {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+}
+
+/* Custom scrollbar for glassmorphism */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Animated background particles */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Glassmorphism animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+  100% { box-shadow: 0 0 30px rgba(139, 92, 246, 0.6); }
+}
+
+.glow-animation {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Custom gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #4facfe 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
