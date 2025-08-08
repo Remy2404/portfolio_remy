@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
         {/* Profile Image */}
         <div className="mb-8 relative">
           {/* Flame ring wraps the glass card to keep fire outside the border */}
-          <div className="flame-ring rounded-full w-56 h-56 mx-auto flex items-center justify-center">
+          <div className="rounded-full w-56 h-56 mx-auto flex items-center justify-center">
             <div className="w-48 h-48 rounded-full overflow-hidden glass-card p-2 float-animation">
               <img
                 src="https://avatars.githubusercontent.com/u/136186665?v=4"
