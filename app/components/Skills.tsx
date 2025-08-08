@@ -22,6 +22,7 @@ const Skills: React.FC = () => {
       badgeVariant: "primary",
       skills: [
         { name: "React.js", level: 90 },
+        { name: "Next.js", level: 85 },
         { name: "TypeScript", level: 85 },
         { name: "JavaScript", level: 95 },
         { name: "HTML5/CSS3", level: 90 },
@@ -47,6 +48,8 @@ const Skills: React.FC = () => {
         { name: "MongoDB", level: 85 },
         { name: "MySQL", level: 80 },
         { name: "PostgreSQL", level: 75 },
+        { name: "D1", level: 70 },
+        { name: "Supabase", level: 70 },
         { name: "SQLite", level: 70 },
       ],
     },
@@ -54,8 +57,9 @@ const Skills: React.FC = () => {
       title: "Mobile Development",
       badgeVariant: "info",
       skills: [
-        { name: "React Native", level: 82 },
-        { name: "Flutter", level: 75 },
+        { name: "React Native (Expo Router)", level: 82 },
+        { name: "Flutter", level: 60 },
+        { name: "Android", level: 70 },
       ],
     },
     {
@@ -162,6 +166,15 @@ const Skills: React.FC = () => {
           <img
             src="https://github-readme-stats.vercel.app/api/top-langs?username=remy2404&show_icons=true&locale=en&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117"
             alt="Top Languages"
+            className="w-full rounded-lg"
+          />
+        </GlassCard>
+        {/* github Matrix */}
+        <GlassCard className="text-center md:col-span-2">
+          <h3 className="text-xl font-bold text-white mb-4">GitHub Matrix</h3>
+          <img
+            src="https://ghchart.rshah.org/remy2404"
+            alt="GitHub Contribution Matrix"
             className="w-full rounded-lg"
           />
         </GlassCard>
