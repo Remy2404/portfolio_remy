@@ -1,10 +1,53 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Typewriter } from 'react-simple-typewriter';
+import Galaxy from '../../react_bit/Galaxy/Galaxy';
+import ClientOnly from "./ClientOnly";
+
+const TypewriterText: React.FC<{ words: string[] }> = ({ words }) => {
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const word = words[currentWordIndex];
+    const timeout = setTimeout(
+      () => {
+        if (!isDeleting) {
+          setCurrentText(word.substring(0, currentText.length + 1));
+          if (currentText === word) {
+            setTimeout(() => setIsDeleting(true), 2000);
+          }
+        } else {
+          setCurrentText(word.substring(0, currentText.length - 1));
+          if (currentText === "") {
+            setIsDeleting(false);
+            setCurrentWordIndex((prev) => (prev + 1) % words.length);
+          }
+        }
+      },
+      isDeleting ? 80 : 100
+    );
+
+    return () => clearTimeout(timeout);
+  }, [currentText, isDeleting, currentWordIndex, words]);
+
+  return (
+    <span>
+      {currentText}
+      <span className="animate-pulse">_</span>
+    </span>
+  );
+};
 
 const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Galaxy Background container (component removed) */}
-      <div className="absolute inset-0 z-0">{/* <Galaxy /> was here */}</div>
+      {/* Galaxy Background */}
+      <div className="absolute inset-0 z-0">
+        <ClientOnly>
+          <Galaxy />
+        </ClientOnly>
+      </div>
 
       {/* Hero Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
@@ -22,7 +65,13 @@ const Hero: React.FC = () => {
 
         {/* Name and Title */}
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-          <span className="gradient-text">Phon Ramy</span>
+          <span className="gradient-text">
+            <ClientOnly>
+              <TypewriterText
+                words={["Phon Ramy", "Full Stack Developer", "Creative Coder"]}
+              />
+            </ClientOnly>
+          </span>
         </h1>
 
         {/* Subtitle */}

@@ -1,19 +1,38 @@
 import type { Route } from "./+types/home";
 import Hero from "~/components/Hero";
 import Skills from "~/components/Skills";
-// import ExperienceTimeline from "~/components/ExperienceTimeline";
+import ExperienceTimeline from "~/components/ExperienceTimeline";
 import Projects from "~/components/Projects";
 import ContactForm from "~/components/ContactForm";
+import ClientOnly from "~/components/ClientOnly";
 
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Phon Ramy - Full Stack Developer Portfolio" },
-    { name: "description", content: "Professional portfolio of Phon Ramy, a passionate full stack developer from Cambodia crafting elegant solutions with modern technologies." },
-    { name: "keywords", content: "Phon Ramy, Full Stack Developer, React, Node.js, JavaScript, TypeScript, Portfolio, Cambodia, Web Development" },
-    { property: "og:title", content: "Phon Ramy - Full Stack Developer Portfolio" },
-    { property: "og:description", content: "Professional portfolio showcasing projects and skills in modern web development" },
+    {
+      name: "description",
+      content:
+        "Professional portfolio of Phon Ramy, a passionate full stack developer from Cambodia crafting elegant solutions with modern technologies.",
+    },
+    {
+      name: "keywords",
+      content:
+        "Phon Ramy, Full Stack Developer, React, Node.js, JavaScript, TypeScript, Portfolio, Cambodia, Web Development",
+    },
+    {
+      property: "og:title",
+      content: "Phon Ramy - Full Stack Developer Portfolio",
+    },
+    {
+      property: "og:description",
+      content:
+        "Professional portfolio showcasing projects and skills in modern web development",
+    },
     { property: "og:type", content: "website" },
-    { property: "og:image", content: "https://avatars.githubusercontent.com/u/136186665?v=4" },
+    {
+      property: "og:image",
+      content: "https://avatars.githubusercontent.com/u/136186665?v=4",
+    },
     { name: "twitter:card", content: "summary_large_image" },
   ];
 }
@@ -87,14 +106,19 @@ export default function Home() {
       </div>
 
       {/* Skills Section */}
+      {/* 2. Wrap the Skills component */}
       <div id="skills">
-        <Skills />
+        <ClientOnly>
+          <Skills />
+        </ClientOnly>
       </div>
 
       {/* Experience Section */}
-      {/* <div id="experience">
-        <ExperienceTimeline />
-      </div> */}
+      <div id="experience">
+        <ClientOnly>
+          <ExperienceTimeline />
+        </ClientOnly>
+      </div>
 
       {/* Projects Section */}
       <div id="projects">
