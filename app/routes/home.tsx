@@ -1,7 +1,7 @@
 import type { Route } from "./+types/home";
 import Hero from "~/components/Hero";
 import Skills from "~/components/Skills";
-import ExperienceTimeline from "~/components/ExperienceTimeline";
+// import ExperienceTimeline from "~/components/ExperienceTimeline";
 import Projects from "~/components/Projects";
 import ContactForm from "~/components/ContactForm";
 
@@ -92,9 +92,9 @@ export default function Home() {
       </div>
 
       {/* Experience Section */}
-      <div id="experience">
+      {/* <div id="experience">
         <ExperienceTimeline />
-      </div>
+      </div> */}
 
       {/* Projects Section */}
       <div id="projects">
