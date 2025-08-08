@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Typewriter } from 'react-simple-typewriter';
 import Galaxy from '../../react_bit/Galaxy/Galaxy';
 import ClientOnly from "./ClientOnly";
 
@@ -53,12 +52,15 @@ const Hero: React.FC = () => {
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         {/* Profile Image */}
         <div className="mb-8 relative">
-          <div className="w-48 h-48 mx-auto rounded-full overflow-hidden glass-card p-2 float-animation">
-            <img
-              src="https://avatars.githubusercontent.com/u/136186665?v=4"
-              alt="Phon Ramy"
-              className="w-full h-full rounded-full object-cover"
-            />
+          {/* Flame ring wraps the glass card to keep fire outside the border */}
+          <div className="flame-ring rounded-full w-56 h-56 mx-auto flex items-center justify-center">
+            <div className="w-48 h-48 rounded-full overflow-hidden glass-card p-2 float-animation">
+              <img
+                src="https://avatars.githubusercontent.com/u/136186665?v=4"
+                alt="Phon Ramy"
+                className="w-full h-full rounded-full object-cover"
+              />
+            </div>
           </div>
           <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 opacity-20 blur-lg"></div>
         </div>
@@ -89,7 +91,7 @@ const Hero: React.FC = () => {
                 clipRule="evenodd"
               />
             </svg>
-            <span>Cambodia</span>
+            <span>Cambodia , Phnom Penh</span>
           </div>
           <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
           <span className="text-green-400 font-medium">

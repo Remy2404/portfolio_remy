@@ -134,8 +134,8 @@ export default function Home() {
       <footer className="py-10 px-2 border-t border-white/10">
         <div className="max-w-6xl mx-auto">
           <div className="glass-card text-center px-4 py-8">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div className="w-full md:w-auto">
+            <div className="flex flex-col items-center justify-center gap-6">
+              <div className="w-full text-center">
                 <h3 className="text-xl font-bold text-white mb-2 gradient-text">
                   Phon Ramy
                 </h3>

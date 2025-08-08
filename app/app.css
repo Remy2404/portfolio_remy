@@ -120,3 +120,89 @@ body {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+/* --- Flame ring effect for circular cards --- */
+/* Usage: wrap your glass card with a .flame-ring.rounded-full container. */
+.flame-ring {
+  position: relative;
+  --flame-thickness: 12px; /* ring thickness */
+  --flame-outset: 8px;     /* how much the flame extends outward */
+}
+
+
+.flame-ring::before {
+  content: "";
+  position: absolute;
+  inset: calc(var(--flame-outset) * -1);
+  border-radius: 9999px;
+  pointer-events: none;
+  /* Multi-layered, irregular flame look */
+  background:
+    conic-gradient(from 0deg at 50% 50%,
+      rgba(255,140,0,0) 0deg,
+      rgba(255,120,0,.95) 18deg,
+      rgba(255,200,0,1) 37deg,
+      rgba(255,70,0,.95) 55deg,
+      rgba(255,160,0,.85) 80deg,
+      rgba(255,230,0,1) 110deg,
+      rgba(255,90,0,.95) 150deg,
+      rgba(255,150,0,1) 190deg,
+      rgba(255,200,0,.95) 230deg,
+      rgba(255,100,0,1) 270deg,
+      rgba(255,140,0,0) 360deg
+    ),
+    repeating-conic-gradient(from 0deg at 50% 50%,
+      rgba(255,255,255,0.12) 0deg 10deg,
+      transparent 10deg 20deg
+    ),
+    radial-gradient(80% 80% at 50% 50%, rgba(255,200,0,.25), rgba(255,120,0,.10) 60%, transparent 70%);
+  filter: blur(7px) saturate(1.3) contrast(1.1);
+  /* Irregular mask for flame tongues */
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><radialGradient id="r" cx="0.5" cy="0.5" r="0.5" fx="0.5" fy="0.5"><stop offset="0.7" stop-color="white" stop-opacity="0"/><stop offset="0.8" stop-color="white" stop-opacity="1"/></radialGradient><path d="M50,10 Q55,18 60,10 Q65,20 70,10 Q75,22 80,10 Q85,25 90,10 Q92,40 90,80 Q80,92 70,90 Q65,98 60,90 Q55,98 50,90 Q45,98 40,90 Q35,98 30,90 Q20,92 10,80 Q8,40 10,10 Q15,22 20,10 Q25,20 30,10 Q35,18 40,10 Q45,20 50,10 Z" fill="url(%23r)"/></svg>');
+  mask-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><radialGradient id="r" cx="0.5" cy="0.5" r="0.5" fx="0.5" fy="0.5"><stop offset="0.7" stop-color="white" stop-opacity="0"/><stop offset="0.8" stop-color="white" stop-opacity="1"/></radialGradient><path d="M50,10 Q55,18 60,10 Q65,20 70,10 Q75,22 80,10 Q85,25 90,10 Q92,40 90,80 Q80,92 70,90 Q65,98 60,90 Q55,98 50,90 Q45,98 40,90 Q35,98 30,90 Q20,92 10,80 Q8,40 10,10 Q15,22 20,10 Q25,20 30,10 Q35,18 40,10 Q45,20 50,10 Z" fill="url(%23r)"/></svg>');
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  animation: flameSpin 8s linear infinite, flameFlicker 120ms infinite alternate, flameWave 2.2s ease-in-out infinite;
+}
+
+@keyframes flameWave {
+  0%, 100% { transform: scale(1) skewX(0deg) skewY(0deg); }
+  20% { transform: scale(1.03,0.97) skewX(-2deg) skewY(1deg); }
+  40% { transform: scale(0.98,1.04) skewX(2deg) skewY(-1deg); }
+  60% { transform: scale(1.01,0.99) skewX(-1deg) skewY(2deg); }
+  80% { transform: scale(1.04,0.96) skewX(1deg) skewY(-2deg); }
+}
+
+.flame-ring::after {
+  content: "";
+  position: absolute;
+  inset: calc(var(--flame-outset) * -1.4);
+  border-radius: 9999px;
+  pointer-events: none;
+  background: radial-gradient(closest-side, rgba(255,150,0,.18), transparent 70%);
+  filter: blur(18px) saturate(1.1);
+  -webkit-mask: radial-gradient(closest-side, transparent calc(100% - calc(var(--flame-thickness) * 1.2)), #000 calc(100% - calc(var(--flame-thickness) * 1.2) + 1px));
+  mask: radial-gradient(closest-side, transparent calc(100% - calc(var(--flame-thickness) * 1.2)), #000 calc(100% - calc(var(--flame-thickness) * 1.2) + 1px));
+  animation: flameBreath 3s ease-in-out infinite;
+}
+
+@keyframes flameSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes flameFlicker {
+  0% { filter: blur(7px) brightness(1) hue-rotate(0deg); opacity: .9; }
+  50% { filter: blur(9px) brightness(1.15) hue-rotate(-5deg); opacity: 1; }
+  100% { filter: blur(7px) brightness(0.95) hue-rotate(3deg); opacity: .95; }
+}
+
+@keyframes flameBreath {
+  0%, 100% { opacity: .45; }
+  50% { opacity: .75; }
+}
+
+/* Ensure circular cards remain perfectly round even with glass-card */
+.glass-card.rounded-full {
+  border-radius: 9999px;
+}
+
