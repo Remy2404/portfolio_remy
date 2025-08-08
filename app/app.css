@@ -121,84 +121,295 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* --- Flame ring effect for circular cards --- */
+/* --- Ultra-Realistic Flame Ring Effect --- */
 /* Usage: wrap your glass card with a .flame-ring.rounded-full container. */
 .flame-ring {
   position: relative;
-  --flame-thickness: 12px; /* ring thickness */
-  --flame-outset: 8px;     /* how much the flame extends outward */
+  --flame-thickness: 20px;
+  --flame-outset: 16px;
+  --flame-color-1: rgba(255, 100, 0, 1);
+  --flame-color-2: rgba(255, 150, 30, 0.9);
+  --flame-color-3: rgba(255, 200, 60, 0.8);
+  --flame-color-4: rgba(255, 255, 120, 0.7);
+  --flame-color-5: rgba(255, 255, 200, 0.6);
 }
 
-
+/* Primary flame layer - enhanced with better color transitions */
 .flame-ring::before {
   content: "";
   position: absolute;
   inset: calc(var(--flame-outset) * -1);
   border-radius: 9999px;
   pointer-events: none;
-  /* Multi-layered, irregular flame look */
+  z-index: 3;
   background:
+    /* Multi-layered flame with better depth */
     conic-gradient(from 0deg at 50% 50%,
-      rgba(255,140,0,0) 0deg,
-      rgba(255,120,0,.95) 18deg,
-      rgba(255,200,0,1) 37deg,
-      rgba(255,70,0,.95) 55deg,
-      rgba(255,160,0,.85) 80deg,
-      rgba(255,230,0,1) 110deg,
-      rgba(255,90,0,.95) 150deg,
-      rgba(255,150,0,1) 190deg,
-      rgba(255,200,0,.95) 230deg,
-      rgba(255,100,0,1) 270deg,
-      rgba(255,140,0,0) 360deg
+      transparent 0deg,
+      var(--flame-color-1) 5deg,
+      var(--flame-color-2) 12deg,
+      var(--flame-color-3) 20deg,
+      var(--flame-color-4) 28deg,
+      var(--flame-color-5) 35deg,
+      var(--flame-color-3) 45deg,
+      var(--flame-color-2) 55deg,
+      var(--flame-color-1) 65deg,
+      var(--flame-color-2) 75deg,
+      var(--flame-color-3) 85deg,
+      var(--flame-color-4) 95deg,
+      var(--flame-color-5) 105deg,
+      var(--flame-color-3) 115deg,
+      var(--flame-color-2) 125deg,
+      var(--flame-color-1) 135deg,
+      var(--flame-color-2) 145deg,
+      var(--flame-color-3) 155deg,
+      var(--flame-color-4) 165deg,
+      var(--flame-color-5) 175deg,
+      var(--flame-color-3) 185deg,
+      var(--flame-color-2) 195deg,
+      var(--flame-color-1) 205deg,
+      var(--flame-color-2) 215deg,
+      var(--flame-color-3) 225deg,
+      var(--flame-color-4) 235deg,
+      var(--flame-color-5) 245deg,
+      var(--flame-color-3) 255deg,
+      var(--flame-color-2) 265deg,
+      var(--flame-color-1) 275deg,
+      var(--flame-color-2) 285deg,
+      var(--flame-color-3) 295deg,
+      var(--flame-color-4) 305deg,
+      var(--flame-color-5) 315deg,
+      var(--flame-color-3) 325deg,
+      var(--flame-color-2) 335deg,
+      var(--flame-color-1) 345deg,
+      transparent 355deg
     ),
-    repeating-conic-gradient(from 0deg at 50% 50%,
-      rgba(255,255,255,0.12) 0deg 10deg,
-      transparent 10deg 20deg
+    /* Enhanced sparkles with varying sizes */
+    repeating-conic-gradient(from 30deg at 50% 50%,
+      rgba(255, 255, 255, 0.4) 0deg 1deg,
+      transparent 1deg 3deg,
+      rgba(255, 255, 255, 0.2) 3deg 4deg,
+      transparent 4deg 8deg
     ),
-    radial-gradient(80% 80% at 50% 50%, rgba(255,200,0,.25), rgba(255,120,0,.10) 60%, transparent 70%);
-  filter: blur(7px) saturate(1.3) contrast(1.1);
-  /* Irregular mask for flame tongues */
-  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><radialGradient id="r" cx="0.5" cy="0.5" r="0.5" fx="0.5" fy="0.5"><stop offset="0.7" stop-color="white" stop-opacity="0"/><stop offset="0.8" stop-color="white" stop-opacity="1"/></radialGradient><path d="M50,10 Q55,18 60,10 Q65,20 70,10 Q75,22 80,10 Q85,25 90,10 Q92,40 90,80 Q80,92 70,90 Q65,98 60,90 Q55,98 50,90 Q45,98 40,90 Q35,98 30,90 Q20,92 10,80 Q8,40 10,10 Q15,22 20,10 Q25,20 30,10 Q35,18 40,10 Q45,20 50,10 Z" fill="url(%23r)"/></svg>');
-  mask-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><radialGradient id="r" cx="0.5" cy="0.5" r="0.5" fx="0.5" fy="0.5"><stop offset="0.7" stop-color="white" stop-opacity="0"/><stop offset="0.8" stop-color="white" stop-opacity="1"/></radialGradient><path d="M50,10 Q55,18 60,10 Q65,20 70,10 Q75,22 80,10 Q85,25 90,10 Q92,40 90,80 Q80,92 70,90 Q65,98 60,90 Q55,98 50,90 Q45,98 40,90 Q35,98 30,90 Q20,92 10,80 Q8,40 10,10 Q15,22 20,10 Q25,20 30,10 Q35,18 40,10 Q45,20 50,10 Z" fill="url(%23r)"/></svg>');
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-  animation: flameSpin 8s linear infinite, flameFlicker 120ms infinite alternate, flameWave 2.2s ease-in-out infinite;
+    /* Core heat with blue-white center */
+    radial-gradient(circle at 50% 50%, 
+      rgba(255, 255, 255, 0.6) 0%, 
+      rgba(255, 240, 200, 0.5) 15%,
+      rgba(255, 200, 100, 0.4) 30%, 
+      rgba(255, 150, 50, 0.3) 45%, 
+      rgba(255, 100, 20, 0.2) 60%, 
+      transparent 80%
+    );
+  
+  /* Enhanced SVG mask for more realistic flames */
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="flameGrad" cx="0.5" cy="0.5" r="0.5"><stop offset="0.6" stop-color="transparent"/><stop offset="0.7" stop-color="white" stop-opacity="0.4"/><stop offset="0.8" stop-color="white" stop-opacity="0.8"/><stop offset="0.9" stop-color="white" stop-opacity="0.9"/><stop offset="1" stop-color="white" stop-opacity="0.7"/></radialGradient></defs><path d="M150,30 Q156,40 162,30 Q165,45 171,33 Q174,50 180,38 Q183,55 189,43 Q192,60 198,48 Q201,65 207,53 Q210,70 216,58 Q219,75 225,63 Q228,80 234,68 Q237,85 243,73 Q246,90 252,78 Q255,95 261,83 Q264,100 270,88 Q267,120 261,240 Q255,270 249,265 Q246,285 240,275 Q237,295 231,285 Q228,305 222,295 Q219,315 213,305 Q210,325 204,315 Q201,335 195,325 Q192,345 186,335 Q183,355 177,345 Q174,365 168,355 Q165,375 159,365 Q162,385 156,375 Q150,385 144,375 Q141,365 135,355 Q132,345 126,335 Q129,325 123,315 Q120,305 114,295 Q117,285 111,275 Q108,265 102,255 Q105,245 99,235 Q96,225 90,215 Q93,205 87,195 Q90,185 84,175 Q87,165 81,155 Q84,145 78,135 Q81,125 75,115 Q78,105 72,95 Q75,85 69,75 Q72,65 66,55 Q69,45 63,35 Q66,25 60,15 Q63,5 57,0 Q60,10 54,20 Q51,30 45,40 Q48,50 42,60 Q45,70 39,80 Q42,90 36,100 Q39,110 33,120 Q36,130 30,140 Q33,150 27,160 Q30,170 24,180 Q27,190 21,200 Q24,210 18,220 Q21,230 15,240 Q18,250 12,260 Q15,270 9,280 Q12,290 6,300 Q9,75 12,52 Q15,65 18,55 Q21,75 24,65 Q27,85 30,75 Q33,95 36,85 Q39,105 42,95 Q45,115 48,105 Q51,125 54,115 Q57,135 60,125 Q63,145 66,135 Q69,155 72,145 Q75,165 78,155 Q81,175 84,165 Q87,185 90,175 Q93,195 96,185 Q99,205 102,195 Q105,215 108,205 Q111,225 114,215 Q117,235 120,225 Q123,245 126,235 Q129,255 132,245 Q135,265 138,255 Q141,275 144,265 Q147,285 150,275 Q153,295 156,285 Q159,305 162,295 Q165,315 168,305 Q171,325 174,315 Q174,325 177,315 Q180,325 183,315 Q186,325 189,315 Q192,325 195,315 Q198,325 201,315 Q204,325 207,315 Q210,325 213,315 Q216,325 219,315 Q222,325 225,315 Q228,325 231,315 Q234,325 237,315 Q240,325 243,315 Q246,325 249,315 Q252,325 255,315 Q258,325 261,315 Q264,325 267,315 Q270,325 273,315 Q276,325 279,315 Q282,325 285,315 Q288,325 291,315 Q294,325 297,315 Q300,325 300,315 Q297,75 300,52 Z" fill="url(%23flameGrad)"/></svg>');
+  mask-image: url('data:image/svg+xml;utf8,<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="flameGrad" cx="0.5" cy="0.5" r="0.5"><stop offset="0.6" stop-color="transparent"/><stop offset="0.7" stop-color="white" stop-opacity="0.4"/><stop offset="0.8" stop-color="white" stop-opacity="0.8"/><stop offset="0.9" stop-color="white" stop-opacity="0.9"/><stop offset="1" stop-color="white" stop-opacity="0.7"/></radialGradient></defs><path d="M150,30 Q156,40 162,30 Q165,45 171,33 Q174,50 180,38 Q183,55 189,43 Q192,60 198,48 Q201,65 207,53 Q210,70 216,58 Q219,75 225,63 Q228,80 234,68 Q237,85 243,73 Q246,90 252,78 Q255,95 261,83 Q264,100 270,88 Q267,120 261,240 Q255,270 249,265 Q246,285 240,275 Q237,295 231,285 Q228,305 222,295 Q219,315 213,305 Q210,325 204,315 Q201,335 195,325 Q192,345 186,335 Q183,355 177,345 Q174,365 168,355 Q165,375 159,365 Q162,385 156,375 Q150,385 144,375 Q141,365 135,355 Q132,345 126,335 Q129,325 123,315 Q120,305 114,295 Q117,285 111,275 Q108,265 102,255 Q105,245 99,235 Q96,225 90,215 Q93,205 87,195 Q90,185 84,175 Q87,165 81,155 Q84,145 78,135 Q81,125 75,115 Q78,105 72,95 Q75,85 69,75 Q72,65 66,55 Q69,45 63,35 Q66,25 60,15 Q63,5 57,0 Q60,10 54,20 Q51,30 45,40 Q48,50 42,60 Q45,70 39,80 Q42,90 36,100 Q39,110 33,120 Q36,130 30,140 Q33,150 27,160 Q30,170 24,180 Q27,190 21,200 Q24,210 18,220 Q21,230 15,240 Q18,250 12,260 Q15,270 9,280 Q12,290 6,300 Q9,75 12,52 Q15,65 18,55 Q21,75 24,65 Q27,85 30,75 Q33,95 36,85 Q39,105 42,95 Q45,115 48,105 Q51,125 54,115 Q57,135 60,125 Q63,145 66,135 Q69,155 72,145 Q75,165 78,155 Q81,175 84,165 Q87,185 90,175 Q93,195 96,185 Q99,205 102,195 Q105,215 108,205 Q111,225 114,215 Q117,235 120,225 Q123,245 126,235 Q129,255 132,245 Q135,265 138,255 Q141,275 144,265 Q147,285 150,275 Q153,295 156,285 Q159,305 162,295 Q165,315 168,305 Q171,325 174,315 Q174,325 177,315 Q180,325 183,315 Q186,325 189,315 Q192,325 195,315 Q198,325 201,315 Q204,325 207,315 Q210,325 213,315 Q216,325 219,315 Q222,325 225,315 Q228,325 231,315 Q234,325 237,315 Q240,325 243,315 Q246,325 249,315 Q252,325 255,315 Q258,325 261,315 Q264,325 267,315 Q270,325 273,315 Q276,325 279,315 Q282,325 285,315 Q288,325 291,315 Q294,325 297,315 Q300,325 300,315 Q297,75 300,52 Z" fill="url(%23flameGrad)"/></svg>');
+  
+  filter: blur(3px) saturate(1.6) contrast(1.4) brightness(1.3) hue-rotate(-5deg);
+  animation: 
+    realisticFlameRotate 8s linear infinite,
+    flameIntensityPulse 150ms infinite alternate,
+    flameDance 2.8s ease-in-out infinite,
+    flameDistortion 1.5s ease-in-out infinite alternate,
+    colorShift 4s ease-in-out infinite;
 }
 
-@keyframes flameWave {
-  0%, 100% { transform: scale(1) skewX(0deg) skewY(0deg); }
-  20% { transform: scale(1.03,0.97) skewX(-2deg) skewY(1deg); }
-  40% { transform: scale(0.98,1.04) skewX(2deg) skewY(-1deg); }
-  60% { transform: scale(1.01,0.99) skewX(-1deg) skewY(2deg); }
-  80% { transform: scale(1.04,0.96) skewX(1deg) skewY(-2deg); }
-}
-
+/* Enhanced secondary flame layer */
 .flame-ring::after {
   content: "";
   position: absolute;
-  inset: calc(var(--flame-outset) * -1.4);
+  inset: calc(var(--flame-outset) * -2.5);
   border-radius: 9999px;
   pointer-events: none;
-  background: radial-gradient(closest-side, rgba(255,150,0,.18), transparent 70%);
-  filter: blur(18px) saturate(1.1);
-  -webkit-mask: radial-gradient(closest-side, transparent calc(100% - calc(var(--flame-thickness) * 1.2)), #000 calc(100% - calc(var(--flame-thickness) * 1.2) + 1px));
-  mask: radial-gradient(closest-side, transparent calc(100% - calc(var(--flame-thickness) * 1.2)), #000 calc(100% - calc(var(--flame-thickness) * 1.2) + 1px));
-  animation: flameBreath 3s ease-in-out infinite;
+  z-index: 2;
+  background: 
+    radial-gradient(circle at 50% 50%, 
+      rgba(255, 180, 80, 0.25) 0%, 
+      rgba(255, 140, 60, 0.35) 25%,
+      rgba(255, 120, 40, 0.45) 45%,
+      rgba(255, 100, 30, 0.35) 65%,
+      rgba(255, 80, 20, 0.25) 80%,
+      transparent 90%
+    ),
+    conic-gradient(from 0deg at 50% 50%,
+      rgba(255, 120, 40, 0.15) 0deg,
+      rgba(255, 160, 60, 0.25) 60deg,
+      rgba(255, 140, 50, 0.2) 120deg,
+      rgba(255, 180, 70, 0.3) 180deg,
+      rgba(255, 120, 40, 0.15) 240deg,
+      rgba(255, 200, 80, 0.2) 300deg,
+      rgba(255, 120, 40, 0.15) 360deg
+    );
+  filter: blur(20px) saturate(1.4) brightness(1.2);
+  animation: 
+    heatShimmer 3.5s ease-in-out infinite,
+    outerGlowPulse 2.2s ease-in-out infinite alternate,
+    flameBreath 6s ease-in-out infinite;
 }
 
-@keyframes flameSpin {
-  to { transform: rotate(360deg); }
+/* Enhanced animations */
+@keyframes realisticFlameRotate {
+  0% { transform: rotate(0deg) scale(1) translateY(0px); }
+  25% { transform: rotate(90deg) scale(1.03) translateY(-2px); }
+  50% { transform: rotate(180deg) scale(0.97) translateY(1px); }
+  75% { transform: rotate(270deg) scale(1.02) translateY(-1px); }
+  100% { transform: rotate(360deg) scale(1) translateY(0px); }
 }
 
-@keyframes flameFlicker {
-  0% { filter: blur(7px) brightness(1) hue-rotate(0deg); opacity: .9; }
-  50% { filter: blur(9px) brightness(1.15) hue-rotate(-5deg); opacity: 1; }
-  100% { filter: blur(7px) brightness(0.95) hue-rotate(3deg); opacity: .95; }
+@keyframes flameIntensityPulse {
+  0% { 
+    filter: blur(3px) saturate(1.6) contrast(1.4) brightness(1.3) hue-rotate(-5deg);
+    opacity: 0.9;
+  }
+  25% { 
+    filter: blur(4px) saturate(1.8) contrast(1.5) brightness(1.4) hue-rotate(-8deg);
+    opacity: 1;
+  }
+  50% { 
+    filter: blur(2px) saturate(1.4) contrast(1.2) brightness(1.1) hue-rotate(-2deg);
+    opacity: 0.85;
+  }
+  75% { 
+    filter: blur(5px) saturate(2.0) contrast(1.6) brightness(1.5) hue-rotate(-10deg);
+    opacity: 1;
+  }
+  100% { 
+    filter: blur(3px) saturate(1.6) contrast(1.4) brightness(1.3) hue-rotate(-5deg);
+    opacity: 0.9;
+  }
+}
+
+@keyframes flameDance {
+  0%, 100% { 
+    transform: scale(1) skewX(0deg) skewY(0deg) rotate(0deg); 
+  }
+  12% { 
+    transform: scale(1.04, 0.96) skewX(-2deg) skewY(1deg) rotate(1deg); 
+  }
+  24% { 
+    transform: scale(0.97, 1.05) skewX(2.5deg) skewY(-1.5deg) rotate(-0.5deg); 
+  }
+  36% { 
+    transform: scale(1.02, 0.98) skewX(-1deg) skewY(2deg) rotate(0.8deg); 
+  }
+  48% { 
+    transform: scale(1.05, 0.95) skewX(2deg) skewY(-2.5deg) rotate(-1.2deg); 
+  }
+  60% { 
+    transform: scale(0.96, 1.03) skewX(-2.5deg) skewY(1.5deg) rotate(0.5deg); 
+  }
+  72% { 
+    transform: scale(1.03, 0.97) skewX(1deg) skewY(-1deg) rotate(-0.8deg); 
+  }
+  84% { 
+    transform: scale(0.98, 1.02) skewX(-0.5deg) skewY(0.5deg) rotate(0.3deg); 
+  }
+}
+
+@keyframes flameDistortion {
+  0%, 100% { 
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-position: 0% 0%;
+    mask-position: 0% 0%;
+    transform: scale(1);
+  }
+  20% { 
+    -webkit-mask-size: 103% 97%;
+    mask-size: 103% 97%;
+    -webkit-mask-position: 2% 3%;
+    mask-position: 2% 3%;
+    transform: scale(1.01, 0.99);
+  }
+  40% { 
+    -webkit-mask-size: 98% 104%;
+    mask-size: 98% 104%;
+    -webkit-mask-position: 3% 1%;
+    mask-position: 3% 1%;
+    transform: scale(0.99, 1.01);
+  }
+  60% { 
+    -webkit-mask-size: 101% 99%;
+    mask-size: 101% 99%;
+    -webkit-mask-position: 1% 4%;
+    mask-position: 1% 4%;
+    transform: scale(1.005, 0.995);
+  }
+  80% { 
+    -webkit-mask-size: 99% 102%;
+    mask-size: 99% 102%;
+    -webkit-mask-position: 4% 2%;
+    mask-position: 4% 2%;
+    transform: scale(0.995, 1.005);
+  }
+}
+
+@keyframes heatShimmer {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg) translateX(0px);
+    opacity: 0.7;
+  }
+  25% { 
+    transform: scale(1.08) rotate(1.5deg) translateX(2px);
+    opacity: 0.9;
+  }
+  50% { 
+    transform: scale(0.92) rotate(-1deg) translateX(-1px);
+    opacity: 0.6;
+  }
+  75% { 
+    transform: scale(1.05) rotate(0.8deg) translateX(1px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes outerGlowPulse {
+  0% { 
+    filter: blur(20px) saturate(1.4) brightness(1.2);
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% { 
+    filter: blur(25px) saturate(1.6) brightness(1.4);
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+  100% { 
+    filter: blur(20px) saturate(1.4) brightness(1.2);
+    opacity: 0.5;
+    transform: scale(1);
+  }
 }
 
 @keyframes flameBreath {
-  0%, 100% { opacity: .45; }
-  50% { opacity: .75; }
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes colorShift {
+  0%, 100% { 
+    filter: blur(3px) saturate(1.6) contrast(1.4) brightness(1.3) hue-rotate(-5deg);
+  }
+  25% { 
+    filter: blur(3px) saturate(1.6) contrast(1.4) brightness(1.3) hue-rotate(5deg);
+  }
+  50% { 
+    filter: blur(3px) saturate(1.6) contrast(1.4) brightness(1.3) hue-rotate(-10deg);
+  }
+  75% { 
+    filter: blur(3px) saturate(1.6) contrast(1.4) brightness(1.3) hue-rotate(10deg);
+  }
+}
+
+/* Add subtle glow to the container */
+.flame-ring {
+  filter: drop-shadow(0 0 30px rgba(255, 120, 40, 0.3));
 }
 
 /* Ensure circular cards remain perfectly round even with glass-card */
