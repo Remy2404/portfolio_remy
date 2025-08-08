@@ -1,5 +1,5 @@
-import React from 'react';
-import GlassCard from './GlassCard';
+import React from "react";
+import GlassCard from "./GlassCard";
 
 interface Project {
   title: string;
@@ -31,7 +31,7 @@ const Projects: React.FC = () => {
         "A full-stack learning resource for Python programming, covering fundamentals to advanced concepts with practical examples and projects.",
       image:
         "https://thfvnext.bing.com/th/id/OIP.RTQdRj1eX2m0VBsHT8cYSQHaE8?w=260&h=180&c=7&r=0&o=7&cb=thfvnext&dpr=1.3&pid=1.7&rm=3",
-      technologies: ["Python","Flask", "Data Science"],
+      technologies: ["Python", "Flask", "Data Science"],
       githubUrl: "https://github.com/Remy2404/python_complete_full_course",
       stars: 4,
       featured: true,
@@ -63,7 +63,14 @@ const Projects: React.FC = () => {
         "Polymind is a powerful multi-modal Telegram bot built with Gemini, DeepSeek, OpenRouter, and over 50 cutting-edge AI models. It offers seamless conversational intelligence, Mermaid diagram rendering, PDF/DOCX analysis, image generation, and collaborative tools—all in a single bot interface.",
       image:
         "https://cdn5.telesco.pe/file/kiltU8aAw4XqBSMCpEHdBKYO3RaAIqq27e4p41midH7CWP77krzeH_8HzndjhD0JPT7CUbmuCBkFTSRyOc13XrBi5LsW60ILG_vOnb_FYEDAZbpRlYO7w1pNoQNhv5yMjlfTP6l70ZRBBl2W_1_swpe8cqPTXeMLO_rmtnz17__xPNA_UG64wcvY40rM0HlXKzvBMBHPUX9gzB8vsq7HUaB3PSxX-ewSBv5MNY6CtxeYjo0gHmG9lBaV0Y9KFDZ_37a_oliHY9rHufQPSxWRLmrRdZDS4Vc7Fh8Y0xsohfNvFwhc73RzZVbs1TbpG62-mhnu4QFBdGYxYEGsqMy-Bw.jpg",
-      technologies: ["python", "FastAPI", "MongoDB", "ffmpeg" , "Telegram Bot API" , "OpenRouter"],
+      technologies: [
+        "python",
+        "FastAPI",
+        "MongoDB",
+        "ffmpeg",
+        "Telegram Bot API",
+        "OpenRouter",
+      ],
       githubUrl: "https://github.com/Remy2404/Polymind",
       featured: true,
       stars: 5,
@@ -74,14 +81,14 @@ const Projects: React.FC = () => {
         "A full-stack e-commerce application for a coffee shop, featuring product catalog, shopping cart, and payment integration.",
       image:
         "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&h=300&fit=crop",
-      technologies: ["java", "android", "supabase", "python" , "fastapi"],
+      technologies: ["java", "android", "supabase", "python", "fastapi"],
       githubUrl: "https://github.com/Remy2404/coffeecorner",
       featured: false,
     },
   ];
 
-  const featuredProjects = projects.filter(project => project.featured);
-  const otherProjects = projects.filter(project => !project.featured);
+  const featuredProjects = projects.filter((project) => project.featured);
+  const otherProjects = projects.filter((project) => !project.featured);
 
   return (
     <section className="py-20 px-4 max-w-7xl mx-auto">

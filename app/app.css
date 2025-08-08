@@ -9,15 +9,15 @@
   --breakpoint-3xl: 1920px;
 
   /* New Neon Accent Colors */
-  --color-neon-green: oklch(85% 0.24 150);  /* Bright Emerald/Teal */
-  --color-neon-gold: oklch(85% 0.15 90);    /* Sharp Gold */
+  --color-neon-green: oklch(85% 0.24 150); /* Bright Emerald/Teal */
+  --color-neon-gold: oklch(85% 0.15 90); /* Sharp Gold */
 
   /* New DaisyUI Core Colors */
-  --color-primary: oklch(80% 0.2 165);      /* Deep Teal */
-  --color-secondary: oklch(85% 0.15 90);    /* Gold as secondary */
-  --color-accent: oklch(88% 0.18 95);       /* Lighter, warmer yellow for accents */
-  --color-neutral: oklch(0.25 0.01 180);    /* Dark, slightly desaturated teal */
-  --color-base-100: oklch(0.12 0 0);        /* Near-black base */
+  --color-primary: oklch(80% 0.2 165); /* Deep Teal */
+  --color-secondary: oklch(85% 0.15 90); /* Gold as secondary */
+  --color-accent: oklch(88% 0.18 95); /* Lighter, warmer yellow for accents */
+  --color-neutral: oklch(0.25 0.01 180); /* Dark, slightly desaturated teal */
+  --color-base-100: oklch(0.12 0 0); /* Near-black base */
   --color-info: oklch(0.7 0.15 220);
   --color-success: oklch(0.7 0.15 140);
   --color-warning: oklch(0.8 0.15 60);
@@ -27,7 +27,11 @@
 /* New Background Gradient */
 html,
 body {
-  background: linear-gradient(135deg, oklch(12% 0.01 180) 0%, oklch(10% 0 0) 100%); /* Dark Teal to Black */
+  background: linear-gradient(
+    135deg,
+    oklch(12% 0.01 180) 0%,
+    oklch(10% 0 0) 100%
+  ); /* Dark Teal to Black */
   min-height: 100vh;
   overflow-x: hidden;
   font-family: var(--font-family-sans);
@@ -36,29 +40,53 @@ body {
 /* Glassmorphism Base Styles */
 .glass {
   backdrop-filter: blur(24px) saturate(160%);
-  background: linear-gradient(120deg, rgba(255,255,255,0.18) 60%, rgba(180,255,255,0.10) 100%);
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.18) 60%,
+    rgba(180, 255, 255, 0.1) 100%
+  );
   border: 1.5px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18), 0 1.5px 8px 0 rgba(0,0,0,0.10);
+  box-shadow:
+    0 8px 32px 0 rgba(31, 38, 135, 0.18),
+    0 1.5px 8px 0 rgba(0, 0, 0, 0.1);
   border-radius: 18px;
-  transition: box-shadow 0.3s, background 0.3s;
+  transition:
+    box-shadow 0.3s,
+    background 0.3s;
 }
 
 .glass-dark {
   backdrop-filter: blur(24px) saturate(120%);
-  background: linear-gradient(120deg, rgba(0,0,0,0.18) 60%, rgba(50,80,120,0.10) 100%);
-  border: 1.5px solid rgba(255, 255, 255, 0.10);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.22), 0 1.5px 8px 0 rgba(0,0,0,0.18);
+  background: linear-gradient(
+    120deg,
+    rgba(0, 0, 0, 0.18) 60%,
+    rgba(50, 80, 120, 0.1) 100%
+  );
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 8px 32px 0 rgba(31, 38, 135, 0.22),
+    0 1.5px 8px 0 rgba(0, 0, 0, 0.18);
   border-radius: 18px;
-  transition: box-shadow 0.3s, background 0.3s;
+  transition:
+    box-shadow 0.3s,
+    background 0.3s;
 }
 
 .glass-card {
   backdrop-filter: blur(28px) saturate(180%);
-  background: linear-gradient(135deg, rgba(255,255,255,0.22) 60%, rgba(180,255,255,0.13) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.22) 60%,
+    rgba(180, 255, 255, 0.13) 100%
+  );
   border: 2px solid rgba(255, 255, 255, 0.32);
-  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.22), 0 2px 12px 0 rgba(0,0,0,0.18);
+  box-shadow:
+    0 12px 40px 0 rgba(31, 38, 135, 0.22),
+    0 2px 12px 0 rgba(0, 0, 0, 0.18);
   border-radius: 22px;
-  transition: box-shadow 0.3s, background 0.3s;
+  transition:
+    box-shadow 0.3s,
+    background 0.3s;
 }
 
 /* Custom scrollbar for glassmorphism */
@@ -93,8 +121,13 @@ body {
 
 /* Glassmorphism animations */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 .float-animation {
@@ -102,8 +135,12 @@ body {
 }
 
 @keyframes glow {
-  0% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
-  100% { box-shadow: 0 0 30px rgba(139, 92, 246, 0.6); }
+  0% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
+  }
 }
 
 .glow-animation {
@@ -121,7 +158,13 @@ body {
 }
 
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

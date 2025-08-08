@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Galaxy from '../../react_bit/Galaxy/Galaxy';
+import Galaxy from "../../react_bit/Galaxy/Galaxy";
 import ClientOnly from "./ClientOnly";
 
 const TypewriterText: React.FC<{ words: string[] }> = ({ words }) => {
@@ -24,7 +24,7 @@ const TypewriterText: React.FC<{ words: string[] }> = ({ words }) => {
           }
         }
       },
-      isDeleting ? 80 : 100
+      isDeleting ? 80 : 100,
     );
 
     return () => clearTimeout(timeout);
@@ -52,17 +52,13 @@ const Hero: React.FC = () => {
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         {/* Profile Image */}
         <div className="mb-8 relative">
-          {/* Flame ring wraps the glass card to keep fire outside the border */}
-          <div className="rounded-full w-56 h-56 mx-auto flex items-center justify-center">
-            <div className="w-48 h-48 rounded-full overflow-hidden glass-card p-2 float-animation">
-              <img
-                src="https://avatars.githubusercontent.com/u/136186665?v=4"
-                alt="Phon Ramy"
-                className="w-full h-full rounded-full object-cover"
-              />
-            </div>
+          <div className="w-48 h-48 mx-auto rounded-full overflow-hidden glass-card p-2 float-animation">
+            <img
+              src="https://avatars.githubusercontent.com/u/136186665?v=4"
+              alt="Phon Ramy"
+              className="w-full h-full rounded-full object-cover"
+            />
           </div>
-          <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 opacity-20 blur-lg"></div>
         </div>
 
         {/* Name and Title */}

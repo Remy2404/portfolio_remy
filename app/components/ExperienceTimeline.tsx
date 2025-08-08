@@ -67,7 +67,16 @@ const ExperienceTimeline: React.FC = () => {
         "Learned through online courses and documentation",
         "Developed problem-solving skills through coding challenges",
       ],
-      skills: ["Python", "JavaScript", "Java", "HTML/CSS", "Git", "Docker", "React", "Node.js"],
+      skills: [
+        "Python",
+        "JavaScript",
+        "Java",
+        "HTML/CSS",
+        "Git",
+        "Docker",
+        "React",
+        "Node.js",
+      ],
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
           <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
@@ -91,7 +100,7 @@ const ExperienceTimeline: React.FC = () => {
         "Database Management",
         "Cloud Computing",
         "Networking",
-        "Mobile Development"
+        "Mobile Development",
       ],
     },
   ];
@@ -139,11 +148,15 @@ const ExperienceTimeline: React.FC = () => {
               }}
               icon={exp.icon}
             >
-              <h3 className="text-lg sm:text-xl font-bold text-white">{exp.title}</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-white">
+                {exp.title}
+              </h3>
               <h4 className="text-base sm:text-lg text-purple-300 font-semibold">
                 {exp.company}
               </h4>
-              <p className="text-white/60 mb-2 sm:mb-4 text-sm sm:text-base">{exp.location}</p>
+              <p className="text-white/60 mb-2 sm:mb-4 text-sm sm:text-base">
+                {exp.location}
+              </p>
 
               <ul className="list-disc list-inside space-y-1 text-white/80 mb-3 sm:mb-4 text-sm sm:text-base">
                 {exp.description.map((item, i) => (
@@ -173,7 +186,10 @@ const ExperienceTimeline: React.FC = () => {
         </h3>
         <div className="max-w-2xl mx-auto">
           {education.map((edu, index) => (
-            <div key={index} className="glass-card mb-4 sm:mb-6 p-4 sm:p-6 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md">
+            <div
+              key={index}
+              className="glass-card mb-4 sm:mb-6 p-4 sm:p-6 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md"
+            >
               <div className="flex flex-col sm:flex-row items-start gap-4">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg
@@ -185,12 +201,18 @@ const ExperienceTimeline: React.FC = () => {
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-lg sm:text-xl font-bold text-white">{edu.title}</h4>
+                  <h4 className="text-lg sm:text-xl font-bold text-white">
+                    {edu.title}
+                  </h4>
                   <p className="text-purple-300 font-semibold text-sm sm:text-base">
                     {edu.institution}
                   </p>
-                  <p className="text-white/60 mb-2 sm:mb-3 text-xs sm:text-sm">{edu.date}</p>
-                  <p className="text-white/80 mb-3 sm:mb-4 text-sm sm:text-base">{edu.description}</p>
+                  <p className="text-white/60 mb-2 sm:mb-3 text-xs sm:text-sm">
+                    {edu.date}
+                  </p>
+                  <p className="text-white/80 mb-3 sm:mb-4 text-sm sm:text-base">
+                    {edu.description}
+                  </p>
                   <div className="flex flex-wrap gap-2">
                     {edu.skills.map((skill, i) => (
                       <span

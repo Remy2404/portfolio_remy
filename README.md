@@ -1,87 +1,80 @@
-# Welcome to React Router!
 
-A modern, production-ready template for building full-stack React applications using React Router.
+# Phon Ramy – Professional Portfolio
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+This is a modern, glassmorphism-themed portfolio website for Phon Ramy, built with React, TypeScript, Tailwind CSS, and daisyUI. It features a galaxy/starfield hero section, animated fire border, timeline, skills, and more.
 
-## Features
+## ✨ Features
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- **Glassmorphism UI**: Frosted-glass cards, soft blurs, and vibrant gradients throughout
+- **Animated Galaxy Hero**: Interactive starfield background with a typewriter intro
+- **Realistic Fire Border**: Custom CSS fire ring effect around the profile card
+- **Experience Timeline**: Vertical timeline with glass cards (react-vertical-timeline-component)
+- **Skills Matrix**: Progress bars and skill badges (react-daisyui, @ramonak/react-progress-bar)
+- **Project Showcase**: Reusable glass cards for projects and testimonials
+- **Contact Form**: Validated with react-hook-form and yup
+- **Fully Responsive**: Mobile-first, works on all devices
+- **Tailwind CSS & daisyUI**: Utility-first styling and beautiful components
+- **TypeScript**: Type-safe, maintainable codebase
 
-## Getting Started
+## 🚀 Getting Started
 
-### Installation
-
-Install the dependencies:
+### 1. Install dependencies
 
 ```bash
 npm install
 ```
 
-### Development
-
-Start the development server with HMR:
+### 2. Start the development server
 
 ```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+Visit [http://localhost:5173](http://localhost:5173) to view your portfolio.
 
-## Building for Production
-
-Create a production build:
+### 3. Build for production
 
 ```bash
 npm run build
 ```
 
-## Deployment
+## 🛠️ Tech Stack
 
-### Docker Deployment
+- **React** + **TypeScript**
+- **Tailwind CSS** + **daisyUI** + **react-daisyui**
+- **react-simple-typewriter** (custom fallback for SSR)
+- **react-vertical-timeline-component**
+- **@ramonak/react-progress-bar**
+- **react-hook-form** + **yup**
+- **OGL** (for animated galaxy background)
 
-To build and run using Docker:
+## 🔥 Special Effects
 
-```bash
-docker build -t my-app .
+- **Animated Fire Border**: Custom CSS/SVG mask, multi-layered gradients, and advanced keyframes for a realistic, flickering fire ring around the profile card.
+- **Galaxy/Starfield**: Interactive, animated background using OGL and custom shaders.
 
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
+## 🧩 Folder Structure
 
 ```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+app/
+	components/
+		Hero.tsx
+		ExperienceTimeline.tsx
+		Skills.tsx
+		GlassCard.tsx
+		ContactForm.tsx
+	app.css
+	...
+react_bit/
+	Galaxy/
+		Galaxy.tsx
 ```
 
-## Styling
+## 📝 Credits
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+- [Phon Ramy](https://github.com/remy2404) – Portfolio owner & developer
+- [Tailwind CSS](https://tailwindcss.com/), [daisyUI](https://daisyui.com/), [React](https://react.dev/)
 
 ---
 
-Built with ❤️ using React Router.
+Built with ❤️ by Phon Ramy. Inspired by modern glassmorphism and cosmic UI trends.
