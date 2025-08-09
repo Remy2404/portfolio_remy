@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Galaxy from "../../react_bit/Galaxy/Galaxy";
 import ClientOnly from "./ClientOnly";
+import { Link } from "react-router";
 
 const TypewriterText: React.FC<{ words: string[] }> = ({ words }) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -95,26 +96,28 @@ const Hero: React.FC = () => {
           </span>
         </div>
 
-        {/* CTA Buttons */}
+        {/* resume Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="glass-card px-8 py-4 text-white font-semibold hover:scale-105 transition-all duration-300 group">
-            <span className="flex items-center gap-2">
-              View My Work
-              <svg
-                className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </span>
-          </button>
+              <Link to="/resume">
+               <button className="glass-card px-8 py-4 text-white font-semibold hover:scale-105 transition-all duration-300 group">
+                 <span className="flex items-center gap-2">
+                  View Resume
+                  <svg
+                    className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </Link>
           <button className="glass-dark px-8 py-4 text-white font-semibold hover:scale-105 transition-all duration-300 border border-white/20">
             <span className="flex items-center gap-2">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
