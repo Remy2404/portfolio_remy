@@ -145,7 +145,7 @@ const Resume: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen relative overflow-x-hidden">
+    <div className="min-h-screen relative overflow-x-hidden bg-[url('/gojo.png')] bg-cover bg-center">
       {/* Floating Particles */}
       <div className="fixed inset-0 -z-5 pointer-events-none">
         {[...Array(6)].map((_, i) => (
@@ -434,8 +434,15 @@ const Resume: React.FC = () => {
                 About Me
               </h3>
               <p className="text-white/90 leading-relaxed">
-                I am a passionate full stack developer dedicated to building elegant, high-performance applications for both web and mobile platforms. My purpose is to craft digital solutions that are not only robust and scalable, but also intuitive and delightful for users. With a proven track record of delivering 15+ successful projects, I thrive on solving complex problems and embracing new technologies.
-                <br /><br />
+                I am a passionate full stack developer dedicated to building
+                elegant, high-performance applications for both web and mobile
+                platforms. My purpose is to craft digital solutions that are not
+                only robust and scalable, but also intuitive and delightful for
+                users. With a proven track record of delivering 15+ successful
+                projects, I thrive on solving complex problems and embracing new
+                technologies.
+                <br />
+                <br />
                 As an active contributor to{" "}
                 <a
                   href="https://khmercoder.com/teams"
@@ -445,15 +452,24 @@ const Resume: React.FC = () => {
                 >
                   KhmerCoder
                 </a>
-                , Cambodia's largest developer community, I collaborate with talented peers to push the boundaries of innovation. My expertise spans AI-integrated solutions, advanced bot systems, and seamless user experiences. I am especially proud of my work on <a href="https://t.me/Gemini_AIAssistBot"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-400 underline hover:text-blue-300"
-                 >
-                polymind</a>{" "}
-                — a multi-modal AI Telegram bot that showcases my commitment to practical, impactful technology.
-                <br /><br />
-                I am always eager to learn, grow, and contribute to projects that make a difference.
+                , Cambodia's largest developer community, I collaborate with
+                talented peers to push the boundaries of innovation. My
+                expertise spans AI-integrated solutions, advanced bot systems,
+                and seamless user experiences. I am especially proud of my work
+                on{" "}
+                <a
+                  href="https://t.me/Gemini_AIAssistBot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 underline hover:text-blue-300"
+                >
+                  polymind
+                </a>{" "}
+                — a multi-modal AI Telegram bot that showcases my commitment to
+                practical, impactful technology.
+                <br />
+                <br />I am always eager to learn, grow, and contribute to
+                projects that make a difference.
               </p>
             </div>
 
