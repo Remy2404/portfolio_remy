@@ -3,11 +3,9 @@ import { Badge } from 'react-daisyui';
 import ProgressBar from '@ramonak/react-progress-bar';
 import { Link } from 'react-router';
 // Add react-icons imports
-import { FaReact, FaNodeJs, FaPython, FaAws, FaGithub, FaLinkedin, FaTelegramPlane } from 'react-icons/fa';
-import { SiNextdotjs, SiTypescript, SiJavascript, SiFlutter, SiDocker, SiMongodb, SiGooglecloud } from 'react-icons/si';
-import { MdOutlineDevices, MdOutlineStar, MdOutlineRocketLaunch } from 'react-icons/md';
-import { AiOutlineCloud, AiOutlineProject } from 'react-icons/ai';
-import { BsFillPersonFill } from 'react-icons/bs';
+import { FaReact, FaNodeJs, FaPython, FaAws } from 'react-icons/fa';
+import { SiTypescript, SiFlutter } from 'react-icons/si';
+import { MdOutlineStar, MdOutlineRocketLaunch } from 'react-icons/md';
 import { GiArtificialIntelligence } from 'react-icons/gi';
 import { HiOutlineBadgeCheck } from 'react-icons/hi';
 import { usePDFDownload } from '../hooks/usePDFDownload';
@@ -102,7 +100,7 @@ const Resume: React.FC = () => {
       company: 'Open Source',
       period: '2022 - Present',
       description: 'Designed and developed robust applications with focus on user experience. Collaborated on open-source projects, contributing to community-driven development.',
-      achievements: ['35+ projects delivered', 'AI integration specialist', 'Community contributor'],
+      achievements: ['15+ projects delivered', 'AI integration specialist', 'Community contributor'],
     },
   ];
 
@@ -113,7 +111,7 @@ const Resume: React.FC = () => {
       description: 'Powerful multi-modal Telegram bot built with Gemini, DeepSeek, OpenRouter, and over 50 cutting-edge AI models.',
       techStack: ['Python', 'Telegram API', 'AI/ML', 'OpenRouter'],
       github: 'https://github.com/Remy2404',
-      demo: null,
+      demo: 'https://t.me/Gemini_AIAssistBot',
     },
     {
       title: 'Gemini AI Application',
@@ -121,7 +119,7 @@ const Resume: React.FC = () => {
       description: 'Built comprehensive AI-powered application with modern architecture and cutting-edge machine learning capabilities.',
       techStack: ['React', 'Node.js', 'Google AI', 'TypeScript'],
       github: 'https://github.com/Remy2404',
-      demo: 'https://phon-ramy-five.vercel.app/',
+      demo: null,
     },
     {
       title: 'Coffee Corner',
@@ -148,20 +146,6 @@ const Resume: React.FC = () => {
 
   return (
     <div className="min-h-screen relative overflow-x-hidden">
-      {/* Meteor Night Sky Background */}
-      <div
-        className="fixed inset-0 -z-10 w-full h-full bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url('https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tVZAvXc04swLSHYlNA2ANVmPuuXb470zeRSN5dbKMZ40ukbi_VUs9A_Vno2L5KCCsZbstaTQb8GzQHwqvpOsHlo1kaCiMWVhpV0bvUrJmO2ITRfIwMZ0wnj5O6CE1xc0GP3jV5R4S7TzGZBjpYYO-5xgbtu6wNg_0=w919-h516-p-k-no-nu')",
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          filter: 'brightness(0.4) blur(1px)',
-        }}
-        aria-hidden="true"
-      />
-      
       {/* Floating Particles */}
       <div className="fixed inset-0 -z-5 pointer-events-none">
         {[...Array(6)].map((_, i) => (
@@ -201,7 +185,7 @@ const Resume: React.FC = () => {
 
       {/* Download CV Button */}
       <div className="fixed top-6 right-6 z-50">
-        <button 
+        <button
           onClick={handleDownloadPDF}
           disabled={isDownloading}
           className="glass-card px-4 py-3 text-white hover:scale-110 transition-all duration-300 group flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
@@ -224,12 +208,13 @@ const Resume: React.FC = () => {
             </svg>
           )}
           <span className="hidden sm:inline">
-            {isDownloading ? 'Generating...' : 'Download CV'}
+            {isDownloading ? "Generating..." : "Download CV"}
           </span>
         </button>
       </div>
 
-      <div className="max-w-4xl mx-auto p-4 md:p-8 pt-24">{/* Increased top padding for fixed buttons */}
+      <div className="max-w-4xl mx-auto p-4 md:p-8 pt-24">
+        {/* Increased top padding for fixed buttons */}
         {/* Header Card */}
         <div className="glass-card p-8 mb-6 relative overflow-hidden animate-fadeInUp">
           <div className="flex flex-col md:flex-row items-center gap-6">
@@ -308,9 +293,15 @@ const Resume: React.FC = () => {
         {/* Achievements Section */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           {achievements.map((achievement, index) => (
-            <div key={index} className="glass-card p-4 text-center hover:scale-105 transition-transform duration-300 animate-fadeInUp" style={{ animationDelay: `${index * 0.1}s` }}>
+            <div
+              key={index}
+              className="glass-card p-4 text-center hover:scale-105 transition-transform duration-300 animate-fadeInUp"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
               <div className="text-2xl mb-2">{achievement.icon}</div>
-              <div className="text-2xl font-bold text-white mb-1">{achievement.number}</div>
+              <div className="text-2xl font-bold text-white mb-1">
+                {achievement.number}
+              </div>
               <div className="text-sm text-white/70">{achievement.label}</div>
             </div>
           ))}
@@ -334,16 +325,25 @@ const Resume: React.FC = () => {
               </h3>
               <div className="space-y-4">
                 {skills.map((skill, index) => (
-                  <div key={index} className="group hover:scale-[1.02] transition-transform duration-300">
+                  <div
+                    key={index}
+                    className="group hover:scale-[1.02] transition-transform duration-300"
+                  >
                     <div className="flex justify-between items-center mb-2">
                       <div className="flex items-center gap-2">
                         <span className="text-lg">{skill.icon}</span>
-                        <span className="text-white/90 font-medium">{skill.name}</span>
+                        <span className="text-white/90 font-medium">
+                          {skill.name}
+                        </span>
                       </div>
-                      <span className="text-blue-300 text-sm">{skill.level}%</span>
+                      <span className="text-blue-300 text-sm">
+                        {skill.level}%
+                      </span>
                     </div>
                     <div className="mb-1">
-                      <Badge color="primary" size="xs" variant="outline">{skill.category}</Badge>
+                      <Badge color="primary" size="xs" variant="outline">
+                        {skill.category}
+                      </Badge>
                     </div>
                     <ProgressBar
                       completed={skill.level}
@@ -431,16 +431,29 @@ const Resume: React.FC = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                Professional Summary
+                About Me
               </h3>
               <p className="text-white/90 leading-relaxed">
-                Passionate full stack developer with expertise in creating
-                robust, scalable applications across web and mobile platforms.
-                Proven track record of 15+ projects demonstrating strong
-                problem-solving abilities and continuous learning mindset.
-                Specialized in developing AI-integrated solutions, sophisticated
-                bot systems, and user-friendly applications that solve complex
-                technical challenges.
+                I am a passionate full stack developer dedicated to building elegant, high-performance applications for both web and mobile platforms. My purpose is to craft digital solutions that are not only robust and scalable, but also intuitive and delightful for users. With a proven track record of delivering 15+ successful projects, I thrive on solving complex problems and embracing new technologies.
+                <br /><br />
+                As an active contributor to{" "}
+                <a
+                  href="https://khmercoder.com/teams"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 underline hover:text-blue-300"
+                >
+                  KhmerCoder
+                </a>
+                , Cambodia's largest developer community, I collaborate with talented peers to push the boundaries of innovation. My expertise spans AI-integrated solutions, advanced bot systems, and seamless user experiences. I am especially proud of my work on <a href="https://t.me/Gemini_AIAssistBot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 underline hover:text-blue-300"
+                 >
+                polymind</a>{" "}
+                — a multi-modal AI Telegram bot that showcases my commitment to practical, impactful technology.
+                <br /><br />
+                I am always eager to learn, grow, and contribute to projects that make a difference.
               </p>
             </div>
 
@@ -454,7 +467,7 @@ const Resume: React.FC = () => {
                 >
                   <path
                     fillRule="evenodd"
-                    d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z"
+                    d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"
                     clipRule="evenodd"
                   />
                   <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z" />
@@ -462,7 +475,10 @@ const Resume: React.FC = () => {
                 Professional Experience
               </h3>
               {experiences.map((exp, index) => (
-                <div key={index} className="glass p-6 rounded-lg hover:scale-[1.02] transition-transform duration-300">
+                <div
+                  key={index}
+                  className="glass p-6 rounded-lg hover:scale-[1.02] transition-transform duration-300"
+                >
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
                     <h4 className="text-xl font-semibold text-white">
                       {exp.title}
@@ -479,7 +495,10 @@ const Resume: React.FC = () => {
                   </p>
                   <div className="space-y-2">
                     {exp.achievements.map((achievement, achIndex) => (
-                      <div key={achIndex} className="flex items-center gap-2 text-sm text-green-400">
+                      <div
+                        key={achIndex}
+                        className="flex items-center gap-2 text-sm text-green-400"
+                      >
                         <span>✓</span>
                         <span>{achievement}</span>
                       </div>
@@ -490,7 +509,10 @@ const Resume: React.FC = () => {
             </div>
 
             {/* Key Projects Section */}
-            <div className="glass-card p-6 animate-fadeInRight" style={{ animationDelay: '0.2s' }}>
+            <div
+              className="glass-card p-6 animate-fadeInRight"
+              style={{ animationDelay: "0.2s" }}
+            >
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                 <svg
                   className="w-6 h-6 text-pink-400"
@@ -522,16 +544,21 @@ const Resume: React.FC = () => {
                     <p className="text-white/80 text-sm leading-relaxed mb-3">
                       {project.description}
                     </p>
-                    
+
                     {/* Tech Stack */}
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.techStack.map((tech, techIndex) => (
-                        <Badge key={techIndex} color="primary" size="xs" variant="outline">
+                        <Badge
+                          key={techIndex}
+                          color="primary"
+                          size="xs"
+                          variant="outline"
+                        >
                           {tech}
                         </Badge>
                       ))}
                     </div>
-                    
+
                     {/* Project Links */}
                     <div className="flex gap-3">
                       <a
@@ -540,7 +567,11 @@ const Resume: React.FC = () => {
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 text-sm text-blue-300 hover:text-blue-400 transition-colors"
                       >
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <svg
+                          className="w-4 h-4"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
                           <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                         </svg>
                         GitHub
@@ -552,8 +583,18 @@ const Resume: React.FC = () => {
                           rel="noopener noreferrer"
                           className="flex items-center gap-2 text-sm text-green-300 hover:text-green-400 transition-colors"
                         >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          <svg
+                            className="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                            />
                           </svg>
                           Live Demo
                         </a>
@@ -565,7 +606,10 @@ const Resume: React.FC = () => {
             </div>
 
             {/* Enhanced Contact Section */}
-            <div className="glass-card p-6 animate-fadeInRight" style={{ animationDelay: '0.3s' }}>
+            <div
+              className="glass-card p-6 animate-fadeInRight"
+              style={{ animationDelay: "0.3s" }}
+            >
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                 <svg
                   className="w-6 h-6 text-cyan-400"
@@ -580,7 +624,7 @@ const Resume: React.FC = () => {
                 </svg>
                 Let's Connect
               </h3>
-              
+
               {/* Quick Contact Actions */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <a
@@ -588,7 +632,11 @@ const Resume: React.FC = () => {
                   className="glass p-4 rounded-lg hover:scale-105 transition-all duration-300 flex items-center gap-3 group"
                 >
                   <div className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
-                    <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                    <svg
+                      className="w-5 h-5 text-blue-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
                       <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                     </svg>
@@ -598,23 +646,29 @@ const Resume: React.FC = () => {
                     <div className="text-white/60 text-sm">Quick response</div>
                   </div>
                 </a>
-                
+
                 <a
                   href="tel:+855962064081"
                   className="glass p-4 rounded-lg hover:scale-105 transition-all duration-300 flex items-center gap-3 group"
                 >
                   <div className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center group-hover:bg-green-500/30 transition-colors">
-                    <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <svg
+                      className="w-5 h-5 text-green-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
                   </div>
                   <div>
                     <div className="text-white font-medium">Call Me</div>
-                    <div className="text-white/60 text-sm">Available 9-5 GMT+7</div>
+                    <div className="text-white/60 text-sm">
+                      Available 9-5 GMT+7
+                    </div>
                   </div>
                 </a>
               </div>
-              
+
               {/* Social Links Grid */}
               <div className="grid grid-cols-3 gap-4">
                 <a
@@ -698,13 +752,13 @@ const Resume: React.FC = () => {
 
       {/* Hidden PDF Component for Download */}
       {showPrintView && (
-        <div 
-          id="resume-pdf-content" 
+        <div
+          id="resume-pdf-content"
           className="fixed -top-[10000px] left-0 w-[794px] min-h-[1123px]"
-          style={{ 
-            fontSize: '12px',
-            lineHeight: '1.4',
-            fontFamily: 'Arial, sans-serif'
+          style={{
+            fontSize: "12px",
+            lineHeight: "1.4",
+            fontFamily: "Arial, sans-serif",
           }}
         >
           <ResumePDF />
