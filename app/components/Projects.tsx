@@ -62,7 +62,7 @@ const Projects: React.FC = () => {
       description:
         "Polymind is a powerful multi-modal Telegram bot built with Gemini, DeepSeek, OpenRouter, and over 50 cutting-edge AI models. It offers seamless conversational intelligence, Mermaid diagram rendering, PDF/DOCX analysis, image generation, and collaborative tools—all in a single bot interface.",
       image:
-        "public/polymind.png",
+  "/polymind.png",
       technologies: [
         "python",
         "FastAPI",

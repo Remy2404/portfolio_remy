@@ -222,7 +222,7 @@ const Resume: React.FC = () => {
             <div className="relative">
               <div className="w-32 h-32 rounded-full overflow-hidden glass p-1 hover:scale-105 transition-transform duration-300">
                 <img
-                  src="public/profile.png"
+                  src="/profile.png"
                   alt="Phon Ramy"
                   className="w-full h-full rounded-full object-cover"
                 />
