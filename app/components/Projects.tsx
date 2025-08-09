@@ -33,7 +33,7 @@ const Projects: React.FC = () => {
         "https://thfvnext.bing.com/th/id/OIP.RTQdRj1eX2m0VBsHT8cYSQHaE8?w=260&h=180&c=7&r=0&o=7&cb=thfvnext&dpr=1.3&pid=1.7&rm=3",
       technologies: ["Python", "Flask", "Data Science"],
       githubUrl: "https://github.com/Remy2404/python_complete_full_course",
-      stars: 4,
+      stars: 1,
       featured: true,
     },
     {
@@ -62,7 +62,7 @@ const Projects: React.FC = () => {
       description:
         "Polymind is a powerful multi-modal Telegram bot built with Gemini, DeepSeek, OpenRouter, and over 50 cutting-edge AI models. It offers seamless conversational intelligence, Mermaid diagram rendering, PDF/DOCX analysis, image generation, and collaborative tools—all in a single bot interface.",
       image:
-        "https://cdn5.telesco.pe/file/kiltU8aAw4XqBSMCpEHdBKYO3RaAIqq27e4p41midH7CWP77krzeH_8HzndjhD0JPT7CUbmuCBkFTSRyOc13XrBi5LsW60ILG_vOnb_FYEDAZbpRlYO7w1pNoQNhv5yMjlfTP6l70ZRBBl2W_1_swpe8cqPTXeMLO_rmtnz17__xPNA_UG64wcvY40rM0HlXKzvBMBHPUX9gzB8vsq7HUaB3PSxX-ewSBv5MNY6CtxeYjo0gHmG9lBaV0Y9KFDZ_37a_oliHY9rHufQPSxWRLmrRdZDS4Vc7Fh8Y0xsohfNvFwhc73RzZVbs1TbpG62-mhnu4QFBdGYxYEGsqMy-Bw.jpg",
+        "public/polymind.png",
       technologies: [
         "python",
         "FastAPI",
