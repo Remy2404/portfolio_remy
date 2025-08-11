@@ -75,7 +75,7 @@ const Hero: React.FC = () => {
 
         {/* Subtitle */}
         <p className="text-xl md:text-2xl text-white/80 mb-8 font-light">
-          A passionate full stack developer crafting elegant solutions
+          A passionate ITE Engineering student and aspiring full stack developer eager to learn and contribute.
         </p>
 
         {/* Location and Status */}

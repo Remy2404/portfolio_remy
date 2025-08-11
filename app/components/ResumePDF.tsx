@@ -30,7 +30,7 @@ const ResumePDF: React.FC = () => {
             fontSize: '20px',
             color: '#4b5563',
             marginBottom: '16px'
-          }}>Full Stack Developer</h2>
+          }}>Aspiring Full Stack Developer</h2>
           <div style={{
             display: 'flex',
             flexWrap: 'wrap',
@@ -73,9 +73,9 @@ const ResumePDF: React.FC = () => {
             color: '#374151',
             lineHeight: '1.6'
           }}>
-            Passionate full stack developer with expertise in creating robust, scalable applications across web and mobile platforms. 
-            Proven track record of 15+ projects demonstrating strong problem-solving abilities and continuous learning mindset. 
-            Specialized in developing AI-integrated solutions, sophisticated bot systems, and user-friendly applications that solve complex technical challenges.
+            Passionate computer science student and aspiring full stack developer crafting elegant solutions with modern technologies. 
+            Currently in final year of IT Engineering with hands-on experience building 15+ personal projects spanning web, mobile, and AI applications. 
+            Eager to contribute fresh perspectives and technical skills to innovative development teams while continuing to grow professionally.
           </p>
         </div>
 
@@ -110,9 +110,9 @@ const ResumePDF: React.FC = () => {
                 padding: 0,
                 margin: 0
               }}>
-                <li>• React / Next.js (Advanced)</li>
-                <li>• TypeScript / JavaScript (Expert)</li>
-                <li>• Responsive Design & UI/UX</li>
+                <li>• React / Next.js (Proficient)</li>
+                <li>• TypeScript / JavaScript (Proficient)</li>
+                <li>• HTML/CSS & Responsive Design</li>
               </ul>
             </div>
             <div>
@@ -129,9 +129,9 @@ const ResumePDF: React.FC = () => {
                 padding: 0,
                 margin: 0
               }}>
-                <li>• Node.js / Express (Advanced)</li>
-                <li>• Python / AI/ML (Proficient)</li>
-                <li>• Database Design & Management</li>
+                <li>• Node.js / Express (Proficient)</li>
+                <li>• Python / AI Integration (Intermediate)</li>
+                <li>• Database Management (MongoDB, SQL)</li>
               </ul>
             </div>
             <div>
@@ -148,9 +148,9 @@ const ResumePDF: React.FC = () => {
                 padding: 0,
                 margin: 0
               }}>
-                <li>• React Native (Proficient)</li>
-                <li>• Flutter (Intermediate)</li>
-                <li>• Cross-platform Solutions</li>
+                <li>• React Native (Learning)</li>
+                <li>• Flutter (Basic)</li>
+                <li>• Cross-platform Development</li>
               </ul>
             </div>
             <div>
@@ -167,9 +167,9 @@ const ResumePDF: React.FC = () => {
                 padding: 0,
                 margin: 0
               }}>
-                <li>• Docker / AWS (Intermediate)</li>
-                <li>• Git / GitHub</li>
-                <li>• CI/CD & Deployment</li>
+                <li>• Docker / Cloud Platforms (Learning)</li>
+                <li>• Git / GitHub (Proficient)</li>
+                <li>• Deployment & Version Control</li>
               </ul>
             </div>
           </div>
@@ -185,7 +185,7 @@ const ResumePDF: React.FC = () => {
             borderBottom: '1px solid #d1d5db',
             paddingBottom: '4px'
           }}>
-            PROFESSIONAL EXPERIENCE
+            PROJECT EXPERIENCE
           </h3>
           <div style={{ marginBottom: '16px' }}>
             <div style={{
@@ -197,7 +197,7 @@ const ResumePDF: React.FC = () => {
               <h4 style={{
                 fontWeight: '600',
                 color: '#1f2937'
-              }}>Full Stack Developer</h4>
+              }}>Self-Directed Developer</h4>
               <span style={{
                 fontSize: '14px',
                 color: '#4b5563'
@@ -207,14 +207,14 @@ const ResumePDF: React.FC = () => {
               color: '#4b5563',
               fontSize: '14px',
               marginBottom: '8px'
-            }}>Open Source</p>
+            }}>Personal Projects & Open Source Contributions</p>
             <p style={{
               color: '#374151',
               fontSize: '14px',
               marginBottom: '8px'
             }}>
-              Designed and developed robust applications with focus on user experience. 
-              Collaborated on open-source projects, contributing to community-driven development.
+              Independently designed and developed full-stack applications while pursuing academic studies. 
+              Focused on modern web technologies, AI integration, and user-centered design principles.
             </p>
             <ul style={{
               fontSize: '14px',
@@ -224,9 +224,10 @@ const ResumePDF: React.FC = () => {
               padding: 0,
               margin: 0
             }}>
-              <li>✓ 35+ projects delivered successfully</li>
-              <li>✓ AI integration specialist with 50+ models implemented</li>
-              <li>✓ Active community contributor and collaborator</li>
+              <li>✓ Built 15+ personal projects showcasing various technologies</li>
+              <li>✓ Integrated 50+ AI models across different applications</li>
+              <li>✓ Contributed to open-source community and GitHub projects</li>
+              <li>✓ Self-taught modern frameworks and development best practices</li>
             </ul>
           </div>
         </div>
@@ -259,7 +260,8 @@ const ResumePDF: React.FC = () => {
               fontSize: '14px',
               marginBottom: '8px'
             }}>
-              Powerful multi-modal Telegram bot built with Gemini, DeepSeek, OpenRouter, and over 50 cutting-edge AI models.
+              Advanced multi-modal Telegram bot integrating 50+ AI models including Gemini, DeepSeek, and OpenRouter. 
+              Features intelligent conversation, document analysis, and collaborative tools in a unified interface.
             </p>
             <p style={{
               fontSize: '12px',
@@ -282,7 +284,8 @@ const ResumePDF: React.FC = () => {
               fontSize: '14px',
               marginBottom: '8px'
             }}>
-              Built comprehensive AI-powered application with modern architecture and cutting-edge machine learning capabilities.
+              Interactive AI-powered web application featuring conversational intelligence, modern React architecture, 
+              and responsive design. Demonstrates integration of Google AI with contemporary frontend development.
             </p>
             <p style={{
               fontSize: '12px',
@@ -305,7 +308,8 @@ const ResumePDF: React.FC = () => {
               fontSize: '14px',
               marginBottom: '8px'
             }}>
-              Cross-platform mobile application for coffee shop management and customer engagement.
+              Full-stack mobile application for coffee shop management featuring user authentication, 
+              product catalog, and customer engagement. Built with modern mobile development practices.
             </p>
             <p style={{
               fontSize: '12px',
@@ -336,11 +340,11 @@ const ResumePDF: React.FC = () => {
                 <h4 style={{
                   fontWeight: '600',
                   color: '#1f2937'
-                }}>Bachelor of IT Engineering</h4>
+                }}>Bachelor of IT Engineering (Expected 2026)</h4>
                 <p style={{
                   color: '#4b5563',
                   fontSize: '14px'
-                }}>Royal University of Phnom Penh</p>
+                }}>Royal University of Phnom Penh • Currently in Year 4</p>
               </div>
               <span style={{
                 fontSize: '14px',
@@ -410,7 +414,7 @@ const ResumePDF: React.FC = () => {
               borderBottom: '1px solid #d1d5db',
               paddingBottom: '4px'
             }}>
-              ACHIEVEMENTS
+              HIGHLIGHTS
             </h3>
             <ul style={{
               fontSize: '14px',
@@ -420,10 +424,11 @@ const ResumePDF: React.FC = () => {
               padding: 0,
               margin: 0
             }}>
-              <li>• 15+ Projects Completed</li>
-              <li>• 50+ AI Models Integrated</li>
-              <li>• 3+ Years Experience</li>
-              <li>• 100% Client Satisfaction</li>
+              <li>• 15+ Personal Projects Portfolio</li>
+              <li>• 50+ AI Models Integration Experience</li>
+              <li>• Strong Self-Learning Abilities</li>
+              <li>• Modern Tech Stack Proficiency</li>
+              <li>• Open Source Contributor</li>
             </ul>
           </div>
         </div>
@@ -439,14 +444,14 @@ const ResumePDF: React.FC = () => {
             fontSize: '14px',
             color: '#4b5563'
           }}>
-            <strong>Available for job opportunities</strong> • Seeking Full-time Opportunities • Available for Contract Work
+            <strong>Seeking Entry-Level Opportunities</strong> • Open to Full-time Positions • Available for Internships • Ready to Learn & Contribute
           </p>
           <p style={{
             fontSize: '12px',
             color: '#6b7280',
             marginTop: '8px'
           }}>
-            Professional resume showcasing technical expertise, project experience, and commitment to continuous growth in software development.
+            Fresh graduate ready to bring passion, technical skills, and eagerness to learn to a dynamic development team.
           </p>
         </div>
       </div>

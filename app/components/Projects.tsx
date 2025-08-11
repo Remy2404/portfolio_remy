@@ -4,6 +4,7 @@ import GlassCard from "./GlassCard";
 interface Project {
   title: string;
   description: string;
+link: string;
   image: string;
   technologies: string[];
   githubUrl?: string;
@@ -15,7 +16,8 @@ interface Project {
 const Projects: React.FC = () => {
   const projects: Project[] = [
     {
-      title: "Gemini AI Completed",
+      title: "Gemini AI Chatbot",
+      link: "https://gemini-ai-completed-pp.vercel.app/",
       description:
         "A comprehensive AI-powered application built with modern JavaScript. Features include intelligent conversation capabilities, responsive design, and optimized performance.",
       image:
@@ -26,45 +28,46 @@ const Projects: React.FC = () => {
       featured: true,
     },
     {
-      title: "Python Complete Course",
+      title: "Polymind Mini web app",
+      link: "https://t.me/Gemini_AIAssistBot",
       description:
-        "A full-stack learning resource for Python programming, covering fundamentals to advanced concepts with practical examples and projects.",
-      image:
-        "https://thfvnext.bing.com/th/id/OIP.RTQdRj1eX2m0VBsHT8cYSQHaE8?w=260&h=180&c=7&r=0&o=7&cb=thfvnext&dpr=1.3&pid=1.7&rm=3",
-      technologies: ["Python", "Flask", "Data Science"],
-      githubUrl: "https://github.com/Remy2404/python_complete_full_course",
+        "A mini web application for Polymind, showcasing its core features and functionalities.",
+      image: "/polymind_mini_web.png",
+      technologies: ["Typescript", "React js"],
+      githubUrl: "https://github.com/Remy2404/MiniWebApp",
       stars: 1,
       featured: true,
     },
     {
-      title: "Java Project Collection",
-      description:
-        "Collection of Java applications demonstrating object-oriented programming principles, design patterns, and enterprise development practices.",
-      image:
-        "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=500&h=300&fit=crop",
-      technologies: ["Java"],
-      githubUrl: "https://github.com/Remy2404/JAVA_PORJECT",
+      title: "Apsara AI",
+      link: "https://www.figma.com/design/4gQPBxCuwFdzBLBpAPi41v/Apsara-AI-UI?node-id=11-3&p=f&t=hCug2Ernx9yKEU5g-0",
+      description: " Apsara AI is AI chatbot in mobile app",
+      image: "/polymind_mini_web.png",
+      technologies: ["React Native", "AI/LLM", "Expo Router"],
+      githubUrl: "https://github.com/Remy2404/apsara-ai",
       stars: 3,
       featured: false,
     },
     {
       title: "AI Resume Analyzer",
+      link: "",
       description:
         "An intelligent resume analysis tool that uses AI to provide feedback on resume content, structure, and optimization suggestions.",
       image:
         "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=500&h=300&fit=crop",
-      technologies: ["Python", "AI/LLM", "React"],
+      technologies: ["Python", "LLM", "React"],
       githubUrl: "https://github.com/Remy2404/ai_resume_analyser",
       featured: false,
     },
     {
       title: "Polymind",
+      link: "https://t.me/Gemini_AIAssistBot",
       description:
         "Polymind is a powerful multi-modal Telegram bot built with Gemini, DeepSeek, OpenRouter, and over 50 cutting-edge AI models. It offers seamless conversational intelligence, Mermaid diagram rendering, PDF/DOCX analysis, image generation, and collaborative tools—all in a single bot interface.",
-      image:
-  "/polymind.png",
+      image: "/polymind.png",
       technologies: [
         "python",
+        "whisper",
         "FastAPI",
         "MongoDB",
         "ffmpeg",
@@ -77,8 +80,9 @@ const Projects: React.FC = () => {
     },
     {
       title: "Coffee Corner",
+      link: "https://www.figma.com/design/smZUGN4wxPJhenLPjcWXxX/coffeecorner?node-id=61-935&p=f&t=JrsQ3kznvpAnTIOV-0",
       description:
-        "A full-stack e-commerce application for a coffee shop, featuring product catalog, shopping cart, and payment integration.",
+        "A full-stack e-commerce application for a coffee shop, featuring product catalog. in mobile app",
       image:
         "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&h=300&fit=crop",
       technologies: ["java", "android", "supabase", "python", "fastapi"],
@@ -146,6 +150,22 @@ const Projects: React.FC = () => {
                 ))}
               </div>
 
+              {/* Link Preview UI */}
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block mb-4 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition p-4 shadow-inner"
+                >
+                  <div className="flex items-center gap-3">
+                    <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 010 5.656m-3.656-3.656a4 4 0 015.656 0m-7.07 7.07a8 8 0 1111.314-11.314 8 8 0 01-11.314 11.314z" />
+                    </svg>
+                    <span className="truncate text-white/90 font-medium">{project.link.replace(/^https?:\/\//, '')}</span>
+                  </div>
+                </a>
+              )}
               <div className="flex gap-3">
                 {project.githubUrl && (
                   <a
@@ -208,6 +228,23 @@ const Projects: React.FC = () => {
                   className="w-full h-32 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
+
+              {/* Link Preview UI */}
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block mb-3 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition p-3 shadow-inner"
+                >
+                  <div className="flex items-center gap-2">
+                    <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 010 5.656m-3.656-3.656a4 4 0 015.656 0m-7.07 7.07a8 8 0 1111.314-11.314 8 8 0 01-11.314 11.314z" />
+                    </svg>
+                    <span className="truncate text-white/90 font-medium">{project.link.replace(/^https?:\/\//, '')}</span>
+                  </div>
+                </a>
+              )}
 
               <h4 className="text-lg font-bold text-white mb-2">
                 {project.title}

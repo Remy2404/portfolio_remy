@@ -16,17 +16,17 @@ interface ExperienceItem {
 const ExperienceTimeline: React.FC = () => {
   const experiences: ExperienceItem[] = [
     {
-      title: "Full Stack Developer",
-      company: "",
-      date: "2025 - Present",
-      location: "Cambodia , Phnom Penh",
+      title: "Self-Directed Developer (Student)",
+      company: "Personal Projects & Open Source",
+      date: "2022 - Present",
+      location: "Cambodia, Phnom Penh",
       description: [
-        "Developed responsive web applications using React.js and Node.js",
-        "Built RESTful APIs and integrated third-party services",
-        "Collaborated with international clients on various projects",
-        "Implemented modern UI/UX designs with Tailwind CSS",
+        "Independently designed and developed full-stack applications while pursuing academic studies.",
+        "Focused on modern web technologies, AI integration, and user-centered design principles.",
+        "Built 15+ personal projects and contributed to open-source community.",
+        "Continuously learning and applying new frameworks and best practices."
       ],
-      skills: ["React", "Node.js", "MongoDB", "Express.js", "Tailwind CSS"],
+      skills: ["React", "Node.js", "MongoDB", "Express.js", "Tailwind CSS", "AI/ML"],
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
           <path
@@ -112,7 +112,7 @@ const ExperienceTimeline: React.FC = () => {
           <span className="gradient-text">Experience & Journey</span>
         </h2>
         <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
-          My professional journey and the experiences that shaped my development
+          My journey and the experiences that shaped my development
           career
         </p>
       </div>
@@ -120,7 +120,7 @@ const ExperienceTimeline: React.FC = () => {
       {/* Experience Timeline */}
       <div className="mb-12 sm:mb-16">
         <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8 text-center">
-          Professional Experience
+          Experience
         </h3>
         <VerticalTimeline lineColor="rgba(255, 255, 255, 0.2)">
           {experiences.map((exp, index) => (

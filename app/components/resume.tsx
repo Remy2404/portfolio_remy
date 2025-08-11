@@ -114,16 +114,16 @@ const Resume: React.FC = () => {
       demo: 'https://t.me/Gemini_AIAssistBot',
     },
     {
-      title: 'Gemini AI Application',
-      tech: 'AI Solution Development',
-      description: 'Built comprehensive AI-powered application with modern architecture and cutting-edge machine learning capabilities.',
+      title: 'Gemini AI chatbot',
+      tech: 'AI Chatbot',
+      description: 'Built comprehensive AI-powered chatbot with modern architecture and cutting-edge machine learning capabilities.',
       techStack: ['React', 'Node.js', 'Google AI', 'TypeScript'],
       github: 'https://github.com/Remy2404',
       demo: null,
     },
     {
       title: 'Coffee Corner',
-      tech: 'Mobile Application',
+      tech: 'Mobile Developments',
       description: 'Cross-platform mobile application for coffee shop management and customer engagement.',
       techStack: ['React Native', 'Node.js', 'MongoDB', 'TypeScript'],
       github: 'https://github.com/Remy2404',
@@ -235,7 +235,7 @@ const Resume: React.FC = () => {
                 <span className="gradient-text">PHON RAMY</span>
               </h1>
               <h2 className="text-xl md:text-2xl text-blue-300 mb-4 font-light">
-                Full Stack Developer
+                Aspiring Full Stack Developer
               </h2>
 
               {/* Contact Info */}
@@ -745,23 +745,21 @@ const Resume: React.FC = () => {
         <div className="glass-card p-6 mt-6 text-center">
           <p className="text-white/80">
             <span className="text-green-400 font-semibold">
-              ✅ Available for job opportunities
+              ✅ Seeking Entry-Level Opportunities
             </span>{" "}
             •
             <span className="text-blue-400 font-semibold">
               {" "}
-              Seeking Full-time Opportunities
+              Open to Full-time Positions
             </span>{" "}
             •
             <span className="text-purple-400 font-semibold">
               {" "}
-              Available for Contract Work
+              Available for Internships
             </span>
           </p>
           <p className="text-white/60 text-sm mt-2">
-            Professional resume showcasing technical expertise, project
-            experience, and commitment to continuous growth in software
-            development.
+            Fresh graduate ready to bring passion, technical skills, and eagerness to learn to a dynamic development team.
           </p>
         </div>
       </div>
