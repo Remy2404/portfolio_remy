@@ -434,11 +434,11 @@ const Resume: React.FC = () => {
                 About Me
               </h3>
               <p className="text-white/90 leading-relaxed">
-                I am a passionate full stack developer dedicated to building
+                I am a passionate full stack developer and a 4th year IT engineering student dedicated to building
                 elegant, high-performance applications for both web and mobile
                 platforms. My purpose is to craft digital solutions that are not
                 only robust and scalable, but also intuitive and delightful for
-                users. With a proven track record of delivering 15+ successful
+                users. With a proven track record of delivering 10+ successful
                 projects, I thrive on solving complex problems and embracing new
                 technologies.
                 <br />

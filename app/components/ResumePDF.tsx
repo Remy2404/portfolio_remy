@@ -67,15 +67,15 @@ const ResumePDF: React.FC = () => {
             borderBottom: '1px solid #d1d5db',
             paddingBottom: '4px'
           }}>
-            PROFESSIONAL SUMMARY
+            ABOUT ME
           </h3>
           <p style={{
             color: '#374151',
             lineHeight: '1.6'
           }}>
-            Passionate computer science student and aspiring full stack developer crafting elegant solutions with modern technologies. 
-            Currently in final year of IT Engineering with hands-on experience building 15+ personal projects spanning web, mobile, and AI applications. 
-            Eager to contribute fresh perspectives and technical skills to innovative development teams while continuing to grow professionally.
+            Passionate IT Engineering student and aspiring full stack developer dedicated to crafting elegant, modern solutions. 
+            Experienced in building 15+ personal projects across web, mobile, and AI domains. 
+            Eager to contribute technical skills and a fresh perspective to innovative teams while continuing to grow professionally.
           </p>
         </div>
 
@@ -185,19 +185,58 @@ const ResumePDF: React.FC = () => {
             borderBottom: '1px solid #d1d5db',
             paddingBottom: '4px'
           }}>
-            PROJECT EXPERIENCE
+            PROFESSIONAL EXPERIENCE
           </h3>
+
+          {/* Internship Experience */}
           <div style={{ marginBottom: '16px' }}>
+            <h4 style={{
+              fontWeight: '600',
+              color: '#2563eb',
+              marginBottom: '4px'
+            }}>Internship</h4>
+            <p style={{
+              color: '#6b7280',
+              fontSize: '14px',
+              marginBottom: '4px'
+            }}>
+              <em>No formal internship experience yet. Eager to gain hands-on industry experience.</em>
+            </p>
+          </div>
+
+          {/* Freelance / Contract Experience */}
+          <div style={{ marginBottom: '16px' }}>
+            <h4 style={{
+              fontWeight: '600',
+              color: '#2563eb',
+              marginBottom: '4px'
+            }}>Freelance / Contract</h4>
+            <p style={{
+              color: '#6b7280',
+              fontSize: '14px',
+              marginBottom: '4px'
+            }}>
+              <em>Available for freelance and contract opportunities.</em>
+            </p>
+          </div>
+
+          {/* Personal Projects */}
+          <div style={{ marginBottom: '16px' }}>
+            <h4 style={{
+              fontWeight: '600',
+              color: '#2563eb',
+              marginBottom: '4px'
+            }}>Personal Projects</h4>
             <div style={{
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'flex-start',
               marginBottom: '8px'
             }}>
-              <h4 style={{
+              <span style={{
                 fontWeight: '600',
                 color: '#1f2937'
-              }}>Self-Directed Developer</h4>
+              }}>Self-Directed Developer</span>
               <span style={{
                 fontSize: '14px',
                 color: '#4b5563'
@@ -226,8 +265,27 @@ const ResumePDF: React.FC = () => {
             }}>
               <li>✓ Built 15+ personal projects showcasing various technologies</li>
               <li>✓ Integrated 50+ AI models across different applications</li>
-              <li>✓ Contributed to open-source community and GitHub projects</li>
               <li>✓ Self-taught modern frameworks and development best practices</li>
+            </ul>
+          </div>
+
+          {/* Open Source Contributions */}
+          <div style={{ marginBottom: '16px' }}>
+            <h4 style={{
+              fontWeight: '600',
+              color: '#2563eb',
+              marginBottom: '4px'
+            }}>Open Source</h4>
+            <ul style={{
+              fontSize: '14px',
+              color: '#374151',
+              lineHeight: '1.5',
+              listStyle: 'none',
+              padding: 0,
+              margin: 0
+            }}>
+              <li>✓ Contributed to open-source community and GitHub projects</li>
+              <li>✓ Active on <span style={{ color: '#2563eb' }}>github.com/Remy2404</span></li>
             </ul>
           </div>
         </div>
@@ -244,77 +302,97 @@ const ResumePDF: React.FC = () => {
           }}>
             KEY PROJECTS
           </h3>
-          
+          {/* Personal Projects */}
           <div style={{ marginBottom: '16px' }}>
             <h4 style={{
               fontWeight: '600',
-              color: '#1f2937'
-            }}>Telegram Chat Bot (Polymind)</h4>
-            <p style={{
-              fontSize: '14px',
-              color: '#4b5563',
+              color: '#2563eb',
               marginBottom: '4px'
-            }}>AI Integration</p>
-            <p style={{
-              color: '#374151',
-              fontSize: '14px',
-              marginBottom: '8px'
-            }}>
-              Advanced multi-modal Telegram bot integrating 50+ AI models including Gemini, DeepSeek, and OpenRouter. 
-              Features intelligent conversation, document analysis, and collaborative tools in a unified interface.
-            </p>
-            <p style={{
-              fontSize: '12px',
-              color: '#4b5563'
-            }}>Tech Stack: Python, Telegram API, AI/ML, OpenRouter</p>
+            }}>Personal Projects</h4>
+            <div style={{ marginBottom: '12px' }}>
+              <span style={{
+                fontWeight: '600',
+                color: '#1f2937'
+              }}>Telegram Chat Bot (Polymind)</span>
+              <p style={{
+                fontSize: '14px',
+                color: '#4b5563',
+                marginBottom: '4px'
+              }}>AI Integration</p>
+              <p style={{
+                color: '#374151',
+                fontSize: '14px',
+                marginBottom: '8px'
+              }}>
+                Advanced multi-modal Telegram bot integrating 50+ AI models including Gemini, DeepSeek, and OpenRouter. 
+                Features intelligent conversation, document analysis, and collaborative tools in a unified interface.
+              </p>
+              <p style={{
+                fontSize: '12px',
+                color: '#4b5563'
+              }}>Tech Stack: Python, Telegram API, AI/ML, OpenRouter</p>
+            </div>
+            <div style={{ marginBottom: '12px' }}>
+              <span style={{
+                fontWeight: '600',
+                color: '#1f2937'
+              }}>Gemini AI Application</span>
+              <p style={{
+                fontSize: '14px',
+                color: '#4b5563',
+                marginBottom: '4px'
+              }}>AI Solution Development</p>
+              <p style={{
+                color: '#374151',
+                fontSize: '14px',
+                marginBottom: '8px'
+              }}>
+                Interactive AI-powered web application featuring conversational intelligence, modern React architecture, 
+                and responsive design. Demonstrates integration of Google AI with contemporary frontend development.
+              </p>
+              <p style={{
+                fontSize: '12px',
+                color: '#4b5563'
+              }}>Tech Stack: React, Node.js, Google AI, TypeScript</p>
+            </div>
+            <div style={{ marginBottom: '12px' }}>
+              <span style={{
+                fontWeight: '600',
+                color: '#1f2937'
+              }}>Coffee Corner</span>
+              <p style={{
+                fontSize: '14px',
+                color: '#4b5563',
+                marginBottom: '4px'
+              }}>Mobile Application</p>
+              <p style={{
+                color: '#374151',
+                fontSize: '14px',
+                marginBottom: '8px'
+              }}>
+                Full-stack mobile application for coffee shop management featuring user authentication, 
+                product catalog, and customer engagement. Built with modern mobile development practices.
+              </p>
+              <p style={{
+                fontSize: '12px',
+                color: '#4b5563'
+              }}>Tech Stack: React Native, Node.js, MongoDB, TypeScript</p>
+            </div>
           </div>
-
+          {/* Open Source Projects */}
           <div style={{ marginBottom: '16px' }}>
             <h4 style={{
               fontWeight: '600',
-              color: '#1f2937'
-            }}>Gemini AI Application</h4>
-            <p style={{
-              fontSize: '14px',
-              color: '#4b5563',
+              color: '#2563eb',
               marginBottom: '4px'
-            }}>AI Solution Development</p>
+            }}>Open Source</h4>
             <p style={{
               color: '#374151',
               fontSize: '14px',
               marginBottom: '8px'
             }}>
-              Interactive AI-powered web application featuring conversational intelligence, modern React architecture, 
-              and responsive design. Demonstrates integration of Google AI with contemporary frontend development.
+              Contributor to various open-source projects on GitHub. See more at <span style={{ color: '#2563eb' }}>github.com/Remy2404</span>
             </p>
-            <p style={{
-              fontSize: '12px',
-              color: '#4b5563'
-            }}>Tech Stack: React, Node.js, Google AI, TypeScript</p>
-          </div>
-
-          <div style={{ marginBottom: '16px' }}>
-            <h4 style={{
-              fontWeight: '600',
-              color: '#1f2937'
-            }}>Coffee Corner</h4>
-            <p style={{
-              fontSize: '14px',
-              color: '#4b5563',
-              marginBottom: '4px'
-            }}>Mobile Application</p>
-            <p style={{
-              color: '#374151',
-              fontSize: '14px',
-              marginBottom: '8px'
-            }}>
-              Full-stack mobile application for coffee shop management featuring user authentication, 
-              product catalog, and customer engagement. Built with modern mobile development practices.
-            </p>
-            <p style={{
-              fontSize: '12px',
-              color: '#4b5563'
-            }}>Tech Stack: React Native, Node.js, MongoDB, TypeScript</p>
           </div>
         </div>
 
