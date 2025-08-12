@@ -12,13 +12,11 @@ export const usePDFDownload = () => {
 
     try {
       const captureWidth = 962;
-      const captureHeight = 2904;
+      const captureHeight = element.scrollHeight;
 
-      // Calculate offsets to center the capture area
-      const windowWidth = window.innerWidth;
-      const windowHeight = window.innerHeight;
-      const xOffset = (windowWidth - captureWidth) / 2;
-      const yOffset = (windowHeight - captureHeight) / 2;
+      const rect = element.getBoundingClientRect();
+      const xOffset = Math.max(0, (rect.width - captureWidth) / 2);
+      const yOffset = 0;
 
       const canvas = await html2canvas(element, {
         scale: 2,
@@ -28,11 +26,12 @@ export const usePDFDownload = () => {
         logging: false,
         width: captureWidth,
         height: captureHeight,
-        x: xOffset > 0 ? xOffset : 0, // Apply x offset, ensure it's not negative
-        y: yOffset > 0 ? yOffset : 0, // Apply y offset, ensure it's not negative
+        x: xOffset,
+        y: yOffset,
       });
 
-      const imgData = canvas.toDataURL('image/png');
+      const imgWidth = canvas.width;
+      const imgHeight = canvas.height;
 
       const pdf = new jsPDF({
         orientation: 'portrait',
@@ -42,20 +41,45 @@ export const usePDFDownload = () => {
 
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = pdf.internal.pageSize.getHeight();
-      
-      const imgWidth = canvas.width;
-      const imgHeight = canvas.height;
-      
-      const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
-      const scaledWidth = imgWidth * ratio;
-      const scaledHeight = imgHeight * ratio;
 
-      const x = (pdfWidth - scaledWidth) / 2;
-      const y = (pdfHeight - scaledHeight) / 2;
+      // Scale to fit full PDF width
+      const scale = pdfWidth / imgWidth;
+      const pageHeightPx = pdfHeight / scale;
 
-      pdf.addImage(imgData, 'PNG', x, y, scaledWidth, scaledHeight);
+      let positionY = 0;
+      let pageIndex = 0;
+
+      while (positionY < imgHeight) {
+        // Create a temporary canvas for the current slice
+        const pageCanvas = document.createElement('canvas');
+        const pageCtx = pageCanvas.getContext('2d');
+        pageCanvas.width = imgWidth;
+        pageCanvas.height = Math.min(pageHeightPx, imgHeight - positionY);
+
+        // Copy part of the big canvas into the page canvas
+        if (pageCtx) {
+          pageCtx.drawImage(
+            canvas,
+            0, positionY,               
+            imgWidth, pageCanvas.height,
+            0, 0,                        
+            imgWidth, pageCanvas.height
+          );
+        } else {
+          console.error('Failed to get 2D context for page canvas');
+          return false;
+        }
+
+        const pageData = pageCanvas.toDataURL('image/png');
+
+        if (pageIndex > 0) pdf.addPage();
+        pdf.addImage(pageData, 'PNG', 0, 0, pdfWidth, (pageCanvas.height * scale));
+
+        positionY += pageHeightPx;
+        pageIndex++;
+      }
+
       pdf.save(filename);
-
       return true;
     } catch (error) {
       console.error('An error occurred during PDF generation:', error);
@@ -65,3 +89,4 @@ export const usePDFDownload = () => {
 
   return { downloadPDF };
 };
+export default usePDFDownload;
