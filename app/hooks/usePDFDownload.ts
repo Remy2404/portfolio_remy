@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+import html2canvas from 'html2canvas-pro';
 
 export const usePDFDownload = () => {
   const downloadPDF = useCallback(async (elementId: string, filename: string = 'document.pdf') => {
@@ -11,11 +11,25 @@ export const usePDFDownload = () => {
     }
 
     try {
+      const captureWidth = 962;
+      const captureHeight = 2904;
+
+      // Calculate offsets to center the capture area
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const xOffset = (windowWidth - captureWidth) / 2;
+      const yOffset = (windowHeight - captureHeight) / 2;
+
       const canvas = await html2canvas(element, {
-        scale: 2, // Use a higher scale for better PDF quality
+        scale: 2,
         useCORS: true,
         allowTaint: true,
-        backgroundColor: '#ffffff', // Ensure a solid background
+        backgroundColor: '#ffffff',
+        logging: false,
+        width: captureWidth,
+        height: captureHeight,
+        x: xOffset > 0 ? xOffset : 0, // Apply x offset, ensure it's not negative
+        y: yOffset > 0 ? yOffset : 0, // Apply y offset, ensure it's not negative
       });
 
       const imgData = canvas.toDataURL('image/png');
@@ -44,7 +58,7 @@ export const usePDFDownload = () => {
 
       return true;
     } catch (error) {
-      console.error('Error generating PDF:', error);
+      console.error('An error occurred during PDF generation:', error);
       return false;
     }
   }, []);
