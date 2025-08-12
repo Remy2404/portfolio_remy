@@ -57,7 +57,7 @@ const ResumePDF: React.FC = () => {
           </div>
         </div>
 
-        {/* Professional Summary */}
+        {/* Summary */}
         <div style={{ marginBottom: '24px' }}>
           <h3 style={{
             fontSize: '18px',
@@ -509,28 +509,6 @@ const ResumePDF: React.FC = () => {
               <li>• Open Source Contributor</li>
             </ul>
           </div>
-        </div>
-
-        {/* Footer */}
-        <div style={{
-          marginTop: '32px',
-          paddingTop: '16px',
-          borderTop: '1px solid #d1d5db',
-          textAlign: 'center'
-        }}>
-          <p style={{
-            fontSize: '14px',
-            color: '#4b5563'
-          }}>
-            <strong>Seeking Entry-Level Opportunities</strong> • Open to Full-time Positions • Available for Internships • Ready to Learn & Contribute
-          </p>
-          <p style={{
-            fontSize: '12px',
-            color: '#6b7280',
-            marginTop: '8px'
-          }}>
-            Fresh graduate ready to bring passion, technical skills, and eagerness to learn to a dynamic development team.
-          </p>
         </div>
       </div>
     </div>

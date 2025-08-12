@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Badge } from 'react-daisyui';
 import ProgressBar from '@ramonak/react-progress-bar';
 import { Link } from 'react-router';
-// Add react-icons imports
 import { FaReact, FaNodeJs, FaPython, FaAws } from 'react-icons/fa';
 import { SiTypescript, SiFlutter } from 'react-icons/si';
 import { MdOutlineStar, MdOutlineRocketLaunch } from 'react-icons/md';
@@ -10,6 +9,7 @@ import { GiArtificialIntelligence } from 'react-icons/gi';
 import { HiOutlineBadgeCheck } from 'react-icons/hi';
 import { usePDFDownload } from '../hooks/usePDFDownload';
 import ResumePDF from './ResumePDF';
+
 
 const Resume: React.FC = () => {
   const [isDownloading, setIsDownloading] = useState(false);
@@ -73,7 +73,7 @@ const Resume: React.FC = () => {
 
   const achievements = [
     {
-      number: '15+',
+      number: '10+',
       label: 'Projects Completed',
       icon: <MdOutlineRocketLaunch className="text-pink-400 text-2xl mx-auto" />,
     },
@@ -775,7 +775,8 @@ const Resume: React.FC = () => {
             fontFamily: "Arial, sans-serif",
           }}
         >
-          <ResumePDF />
+          {/* <ResumePDF /> */}
+         <ResumePDF />
         </div>
       )}
     </div>
