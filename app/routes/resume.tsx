@@ -1,4 +1,4 @@
-import Resume from "../components/resume";
+import Resume from "../components/Resume";
 import ClientOnly from "../components/ClientOnly";
 
 export function meta() {

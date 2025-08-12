@@ -170,4 +170,5 @@ const ResumePDF: React.FC = () => (
     </div>
   </div>
 );
+export default ResumePDF;
 

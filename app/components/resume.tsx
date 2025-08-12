@@ -8,29 +8,20 @@ import { MdOutlineStar, MdOutlineRocketLaunch } from 'react-icons/md';
 import { GiArtificialIntelligence } from 'react-icons/gi';
 import { HiOutlineBadgeCheck } from 'react-icons/hi';
 import { usePDFDownload } from '../hooks/usePDFDownload';
-import ResumePDF from './ResumePDF';
-
 
 const Resume: React.FC = () => {
   const [isDownloading, setIsDownloading] = useState(false);
-  const [showPrintView, setShowPrintView] = useState(false);
   const { downloadPDF } = usePDFDownload();
 
   const handleDownloadPDF = async () => {
     setIsDownloading(true);
-    setShowPrintView(true);
-
-    // Wait for the PDF component to render
-    setTimeout(async () => {
-      const success = await downloadPDF('resume-pdf-content', 'Phon_Ramy_Resume.pdf');
-      if (success) {
-        console.log('PDF downloaded successfully');
-      } else {
-        console.error('Failed to download PDF');
-      }
-      setIsDownloading(false);
-      setShowPrintView(false);
-    }, 1000);
+    const success = await downloadPDF('resume-capture-root', 'Phon_Ramy_Resume.pdf');
+    if (success) {
+      console.log('PDF downloaded successfully');
+    } else {
+      console.error('Failed to download PDF');
+    }
+    setIsDownloading(false);
   };
   const skills = [
     {
@@ -100,7 +91,7 @@ const Resume: React.FC = () => {
       company: 'Open Source',
       period: '2022 - Present',
       description: 'Designed and developed robust applications with focus on user experience. Collaborated on open-source projects, contributing to community-driven development.',
-      achievements: ['15+ projects delivered', 'AI integration specialist', 'Community contributor'],
+      achievements: ['10+ projects delivered', 'AI integration specialist', 'Community contributor'],
     },
   ];
 
@@ -145,22 +136,42 @@ const Resume: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen relative overflow-x-hidden bg-[url('/gojo.png')] bg-cover bg-center">
-      {/* Floating Particles */}
-      <div className="fixed inset-0 -z-5 pointer-events-none">
-        {[...Array(6)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-20 animate-float"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${i * 2}s`,
-              animationDuration: `${4 + Math.random() * 4}s`,
-            }}
-          />
-        ))}
-      </div>
+    <div className="min-h-screen relative overflow-x-hidden bg-[url('/gojo.png')] bg-cover bg-center" id="resume-capture-root">
+      {/* Floating Particles (hydration-safe, client-only) */}
+      {(() => {
+        const [particles, setParticles] = React.useState<Array<{
+          left: string;
+          top: string;
+          animationDuration: string;
+          animationDelay: string;
+        }> | null>(null);
+        React.useEffect(() => {
+          const arr = Array.from({ length: 6 }).map((_, i) => ({
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            animationDuration: `${4 + Math.random() * 4}s`,
+            animationDelay: `${i * 2}s`,
+          }));
+          setParticles(arr);
+        }, []);
+        if (!particles) return null;
+        return (
+          <div className="fixed inset-0 -z-5 pointer-events-none">
+            {particles.map((p, i) => (
+              <div
+                key={i}
+                className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-20 animate-float"
+                style={{
+                  left: p.left,
+                  top: p.top,
+                  animationDelay: p.animationDelay,
+                  animationDuration: p.animationDuration,
+                }}
+              />
+            ))}
+          </div>
+        );
+      })()}
 
       {/* Navigation */}
       <div className="fixed top-6 left-6 z-50">
@@ -763,22 +774,6 @@ const Resume: React.FC = () => {
           </p>
         </div>
       </div>
-
-      {/* Hidden PDF Component for Download */}
-      {showPrintView && (
-        <div
-          id="resume-pdf-content"
-          className="fixed -top-[10000px] left-0 w-[794px] min-h-[1123px]"
-          style={{
-            fontSize: "12px",
-            lineHeight: "1.4",
-            fontFamily: "Arial, sans-serif",
-          }}
-        >
-          {/* <ResumePDF /> */}
-         <ResumePDF />
-        </div>
-      )}
     </div>
   );
 };
