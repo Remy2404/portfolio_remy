@@ -1,518 +1,173 @@
 import React from 'react';
 
-const ResumePDF: React.FC = () => {
-  return (
-    <div style={{
-      minHeight: '100vh',
-      backgroundColor: '#ffffff',
-      color: '#000000',
-      padding: '32px',
-      fontFamily: 'Arial, sans-serif'
-    }}>
-      <div style={{
-        maxWidth: '64rem',
-        margin: '0 auto'
-      }}>
-        {/* Header */}
-        <div style={{
-          textAlign: 'center',
-          marginBottom: '32px',
-          borderBottom: '2px solid #d1d5db',
-          paddingBottom: '24px'
-        }}>
-          <h1 style={{
-            fontSize: '36px',
-            fontWeight: 'bold',
-            color: '#1f2937',
-            marginBottom: '8px'
-          }}>PHON RAMY</h1>
-          <h2 style={{
-            fontSize: '20px',
-            color: '#4b5563',
-            marginBottom: '16px'
-          }}>Aspiring Full Stack Developer</h2>
-          <div style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            gap: '16px',
-            fontSize: '14px',
-            color: '#374151'
-          }}>
-            <span>📧 rosexmee1122@gmail.com</span>
-            <span>📱 096 206 4081</span>
-            <span>📍 Phnom Penh, Cambodia</span>
-          </div>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '16px',
-            marginTop: '8px',
-            fontSize: '14px',
-            color: '#2563eb'
-          }}>
-            <span>🔗 github.com/Remy2404</span>
-            <span>💼 linkedin.com/in/phon-ramy-81025a2a9</span>
-            <span>🌐 phon-ramy-five.vercel.app</span>
-          </div>
-        </div>
+const sectionStyle = {
+  marginBottom: '32px',
+  paddingBottom: '16px',
+  borderBottom: '1px solid #e5e7eb',
+};
+const headingStyle = {
+  fontSize: '32px',
+  fontWeight: 700,
+  color: '#1f2937',
+  marginBottom: '4px',
+};
+const subheadingStyle = {
+  fontSize: '18px',
+  fontWeight: 600,
+  color: '#2563eb',
+  marginBottom: '8px',
+};
+const labelStyle = { fontWeight: 600, color: '#1f2937' };
+const listStyle = { margin: 0, padding: 0, listStyle: 'none', color: '#374151', fontSize: '15px', lineHeight: 1.7 };
+const bullet = { marginRight: 6 };
 
-        {/* Summary */}
-        <div style={{ marginBottom: '24px' }}>
-          <h3 style={{
-            fontSize: '18px',
-            fontWeight: 'bold',
-            color: '#1f2937',
-            marginBottom: '12px',
-            borderBottom: '1px solid #d1d5db',
-            paddingBottom: '4px'
-          }}>
-            ABOUT ME
-          </h3>
-          <p style={{
-            color: '#374151',
-            lineHeight: '1.6'
-          }}>
-            Passionate IT Engineering student and aspiring full stack developer dedicated to crafting elegant, modern solutions. 
-            Experienced in building 15+ personal projects across web, mobile, and AI domains. 
-            Eager to contribute technical skills and a fresh perspective to innovative teams while continuing to grow professionally.
-          </p>
-        </div>
-
-        {/* Technical Skills */}
-        <div style={{ marginBottom: '24px' }}>
-          <h3 style={{
-            fontSize: '18px',
-            fontWeight: 'bold',
-            color: '#1f2937',
-            marginBottom: '12px',
-            borderBottom: '1px solid #d1d5db',
-            paddingBottom: '4px'
-          }}>
-            TECHNICAL SKILLS
-          </h3>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '16px'
-          }}>
-            <div>
-              <h4 style={{
-                fontWeight: '600',
-                color: '#1f2937',
-                marginBottom: '8px'
-              }}>Frontend Development</h4>
-              <ul style={{
-                fontSize: '14px',
-                color: '#374151',
-                lineHeight: '1.5',
-                listStyle: 'none',
-                padding: 0,
-                margin: 0
-              }}>
-                <li>• React / Next.js (Proficient)</li>
-                <li>• TypeScript / JavaScript (Proficient)</li>
-                <li>• HTML/CSS & Responsive Design</li>
-              </ul>
-            </div>
-            <div>
-              <h4 style={{
-                fontWeight: '600',
-                color: '#1f2937',
-                marginBottom: '8px'
-              }}>Backend Development</h4>
-              <ul style={{
-                fontSize: '14px',
-                color: '#374151',
-                lineHeight: '1.5',
-                listStyle: 'none',
-                padding: 0,
-                margin: 0
-              }}>
-                <li>• Node.js / Express (Proficient)</li>
-                <li>• Python / AI Integration (Intermediate)</li>
-                <li>• Database Management (MongoDB, SQL)</li>
-              </ul>
-            </div>
-            <div>
-              <h4 style={{
-                fontWeight: '600',
-                color: '#1f2937',
-                marginBottom: '8px'
-              }}>Mobile Development</h4>
-              <ul style={{
-                fontSize: '14px',
-                color: '#374151',
-                lineHeight: '1.5',
-                listStyle: 'none',
-                padding: 0,
-                margin: 0
-              }}>
-                <li>• React Native (Learning)</li>
-                <li>• Flutter (Basic)</li>
-                <li>• Cross-platform Development</li>
-              </ul>
-            </div>
-            <div>
-              <h4 style={{
-                fontWeight: '600',
-                color: '#1f2937',
-                marginBottom: '8px'
-              }}>DevOps & Tools</h4>
-              <ul style={{
-                fontSize: '14px',
-                color: '#374151',
-                lineHeight: '1.5',
-                listStyle: 'none',
-                padding: 0,
-                margin: 0
-              }}>
-                <li>• Docker / Cloud Platforms (Learning)</li>
-                <li>• Git / GitHub (Proficient)</li>
-                <li>• Deployment & Version Control</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Professional Experience */}
-        <div style={{ marginBottom: '24px' }}>
-          <h3 style={{
-            fontSize: '18px',
-            fontWeight: 'bold',
-            color: '#1f2937',
-            marginBottom: '12px',
-            borderBottom: '1px solid #d1d5db',
-            paddingBottom: '4px'
-          }}>
-            PROFESSIONAL EXPERIENCE
-          </h3>
-
-          {/* Internship Experience */}
-          <div style={{ marginBottom: '16px' }}>
-            <h4 style={{
-              fontWeight: '600',
-              color: '#2563eb',
-              marginBottom: '4px'
-            }}>Internship</h4>
-            <p style={{
-              color: '#6b7280',
-              fontSize: '14px',
-              marginBottom: '4px'
-            }}>
-              <em>No formal internship experience yet. Eager to gain hands-on industry experience.</em>
-            </p>
-          </div>
-
-          {/* Freelance / Contract Experience */}
-          <div style={{ marginBottom: '16px' }}>
-            <h4 style={{
-              fontWeight: '600',
-              color: '#2563eb',
-              marginBottom: '4px'
-            }}>Freelance / Contract</h4>
-            <p style={{
-              color: '#6b7280',
-              fontSize: '14px',
-              marginBottom: '4px'
-            }}>
-              <em>Available for freelance and contract opportunities.</em>
-            </p>
-          </div>
-
-          {/* Personal Projects */}
-          <div style={{ marginBottom: '16px' }}>
-            <h4 style={{
-              fontWeight: '600',
-              color: '#2563eb',
-              marginBottom: '4px'
-            }}>Personal Projects</h4>
-            <div style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'flex-start',
-              marginBottom: '8px'
-            }}>
-              <span style={{
-                fontWeight: '600',
-                color: '#1f2937'
-              }}>Self-Directed Developer</span>
-              <span style={{
-                fontSize: '14px',
-                color: '#4b5563'
-              }}>2022 - Present</span>
-            </div>
-            <p style={{
-              color: '#4b5563',
-              fontSize: '14px',
-              marginBottom: '8px'
-            }}>Personal Projects & Open Source Contributions</p>
-            <p style={{
-              color: '#374151',
-              fontSize: '14px',
-              marginBottom: '8px'
-            }}>
-              Independently designed and developed full-stack applications while pursuing academic studies. 
-              Focused on modern web technologies, AI integration, and user-centered design principles.
-            </p>
-            <ul style={{
-              fontSize: '14px',
-              color: '#374151',
-              lineHeight: '1.5',
-              listStyle: 'none',
-              padding: 0,
-              margin: 0
-            }}>
-              <li>✓ Built 15+ personal projects showcasing various technologies</li>
-              <li>✓ Integrated 50+ AI models across different applications</li>
-              <li>✓ Self-taught modern frameworks and development best practices</li>
-            </ul>
-          </div>
-
-          {/* Open Source Contributions */}
-          <div style={{ marginBottom: '16px' }}>
-            <h4 style={{
-              fontWeight: '600',
-              color: '#2563eb',
-              marginBottom: '4px'
-            }}>Open Source</h4>
-            <ul style={{
-              fontSize: '14px',
-              color: '#374151',
-              lineHeight: '1.5',
-              listStyle: 'none',
-              padding: 0,
-              margin: 0
-            }}>
-              <li>✓ Contributed to open-source community and GitHub projects</li>
-              <li>✓ Active on <span style={{ color: '#2563eb' }}>github.com/Remy2404</span></li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Key Projects */}
-        <div style={{ marginBottom: '24px' }}>
-          <h3 style={{
-            fontSize: '18px',
-            fontWeight: 'bold',
-            color: '#1f2937',
-            marginBottom: '12px',
-            borderBottom: '1px solid #d1d5db',
-            paddingBottom: '4px'
-          }}>
-            KEY PROJECTS
-          </h3>
-          {/* Personal Projects */}
-          <div style={{ marginBottom: '16px' }}>
-            <h4 style={{
-              fontWeight: '600',
-              color: '#2563eb',
-              marginBottom: '4px'
-            }}>Personal Projects</h4>
-            <div style={{ marginBottom: '12px' }}>
-              <span style={{
-                fontWeight: '600',
-                color: '#1f2937'
-              }}>Telegram Chat Bot (Polymind)</span>
-              <p style={{
-                fontSize: '14px',
-                color: '#4b5563',
-                marginBottom: '4px'
-              }}>AI Integration</p>
-              <p style={{
-                color: '#374151',
-                fontSize: '14px',
-                marginBottom: '8px'
-              }}>
-                Advanced multi-modal Telegram bot integrating 50+ AI models including Gemini, DeepSeek, and OpenRouter. 
-                Features intelligent conversation, document analysis, and collaborative tools in a unified interface.
-              </p>
-              <p style={{
-                fontSize: '12px',
-                color: '#4b5563'
-              }}>Tech Stack: Python, Telegram API, AI/ML, OpenRouter</p>
-            </div>
-            <div style={{ marginBottom: '12px' }}>
-              <span style={{
-                fontWeight: '600',
-                color: '#1f2937'
-              }}>Gemini AI Application</span>
-              <p style={{
-                fontSize: '14px',
-                color: '#4b5563',
-                marginBottom: '4px'
-              }}>AI Solution Development</p>
-              <p style={{
-                color: '#374151',
-                fontSize: '14px',
-                marginBottom: '8px'
-              }}>
-                Interactive AI-powered web application featuring conversational intelligence, modern React architecture, 
-                and responsive design. Demonstrates integration of Google AI with contemporary frontend development.
-              </p>
-              <p style={{
-                fontSize: '12px',
-                color: '#4b5563'
-              }}>Tech Stack: React, Node.js, Google AI, TypeScript</p>
-            </div>
-            <div style={{ marginBottom: '12px' }}>
-              <span style={{
-                fontWeight: '600',
-                color: '#1f2937'
-              }}>Coffee Corner</span>
-              <p style={{
-                fontSize: '14px',
-                color: '#4b5563',
-                marginBottom: '4px'
-              }}>Mobile Application</p>
-              <p style={{
-                color: '#374151',
-                fontSize: '14px',
-                marginBottom: '8px'
-              }}>
-                Full-stack mobile application for coffee shop management featuring user authentication, 
-                product catalog, and customer engagement. Built with modern mobile development practices.
-              </p>
-              <p style={{
-                fontSize: '12px',
-                color: '#4b5563'
-              }}>Tech Stack: React Native, Node.js, MongoDB, TypeScript</p>
-            </div>
-          </div>
-          {/* Open Source Projects */}
-          <div style={{ marginBottom: '16px' }}>
-            <h4 style={{
-              fontWeight: '600',
-              color: '#2563eb',
-              marginBottom: '4px'
-            }}>Open Source</h4>
-            <p style={{
-              color: '#374151',
-              fontSize: '14px',
-              marginBottom: '8px'
-            }}>
-              Contributor to various open-source projects on GitHub. See more at <span style={{ color: '#2563eb' }}>github.com/Remy2404</span>
-            </p>
-          </div>
-        </div>
-
-        {/* Education */}
-        <div style={{ marginBottom: '24px' }}>
-          <h3 style={{
-            fontSize: '18px',
-            fontWeight: 'bold',
-            color: '#1f2937',
-            marginBottom: '12px',
-            borderBottom: '1px solid #d1d5db',
-            paddingBottom: '4px'
-          }}>
-            EDUCATION
-          </h3>
-          <div style={{ marginBottom: '12px' }}>
-            <div style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'flex-start'
-            }}>
-              <div>
-                <h4 style={{
-                  fontWeight: '600',
-                  color: '#1f2937'
-                }}>Bachelor of IT Engineering (Expected 2026)</h4>
-                <p style={{
-                  color: '#4b5563',
-                  fontSize: '14px'
-                }}>Royal University of Phnom Penh • Currently in Year 4</p>
-              </div>
-              <span style={{
-                fontSize: '14px',
-                color: '#4b5563'
-              }}>2022-2026</span>
-            </div>
-          </div>
-          <div>
-            <div style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'flex-start'
-            }}>
-              <div>
-                <h4 style={{
-                  fontWeight: '600',
-                  color: '#1f2937'
-                }}>High School Diploma</h4>
-                <p style={{
-                  color: '#4b5563',
-                  fontSize: '14px'
-                }}>Chea Sim Samaki High School</p>
-              </div>
-              <span style={{
-                fontSize: '14px',
-                color: '#4b5563'
-              }}>2022</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Languages & Additional Info */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '24px'
-        }}>
-          <div>
-            <h3 style={{
-              fontSize: '18px',
-              fontWeight: 'bold',
-              color: '#1f2937',
-              marginBottom: '12px',
-              borderBottom: '1px solid #d1d5db',
-              paddingBottom: '4px'
-            }}>
-              LANGUAGES
-            </h3>
-            <ul style={{
-              fontSize: '14px',
-              color: '#374151',
-              lineHeight: '1.5',
-              listStyle: 'none',
-              padding: 0,
-              margin: 0
-            }}>
-              <li>• English (Fluent)</li>
-              <li>• Khmer (Native)</li>
-            </ul>
-          </div>
-          <div>
-            <h3 style={{
-              fontSize: '18px',
-              fontWeight: 'bold',
-              color: '#1f2937',
-              marginBottom: '12px',
-              borderBottom: '1px solid #d1d5db',
-              paddingBottom: '4px'
-            }}>
-              HIGHLIGHTS
-            </h3>
-            <ul style={{
-              fontSize: '14px',
-              color: '#374151',
-              lineHeight: '1.5',
-              listStyle: 'none',
-              padding: 0,
-              margin: 0
-            }}>
-              <li>• 15+ Personal Projects Portfolio</li>
-              <li>• 50+ AI Models Integration Experience</li>
-              <li>• Strong Self-Learning Abilities</li>
-              <li>• Modern Tech Stack Proficiency</li>
-              <li>• Open Source Contributor</li>
-            </ul>
-          </div>
-        </div>
+const ResumePDF: React.FC = () => (
+  <div style={{
+    maxWidth: 900,
+    margin: '0 auto',
+    background: '#fff',
+    color: '#222',
+    fontFamily: 'Arial, sans-serif',
+    padding: 32,
+    fontSize: 15,
+    lineHeight: 1.7,
+  }}>
+    {/* Header */}
+    <div style={{ textAlign: 'center', marginBottom: 24 }}>
+      <div style={headingStyle}>PHON RAMY</div>
+      <div style={{ fontSize: 18, color: '#4b5563', marginBottom: 8 }}>Full Stack Developer & AI Enthusiast</div>
+      <div style={{ color: '#374151', fontSize: 14, marginBottom: 2 }}>
+        📧 rosexmee1122@gmail.com | 📱 +855 96 206 4081 | 📍 Phnom Penh, Cambodia
+      </div>
+      <div style={{ color: '#2563eb', fontSize: 14 }}>
+        🌐 <a href="https://phon-ramy-five.vercel.app" style={{ color: '#2563eb' }}>Portfolio</a> |
+        💻 <a href="https://github.com/Remy2404" style={{ color: '#2563eb' }}>GitHub</a> |
+        🔗 <a href="https://www.linkedin.com/in/phon-ramy-81025a2a9/" style={{ color: '#2563eb' }}>LinkedIn</a>
       </div>
     </div>
-  );
-};
 
-export default ResumePDF;
+    {/* Profile */}
+    <div style={sectionStyle}>
+      <div style={subheadingStyle}>💡 PROFILE</div>
+      <div>
+        Resourceful 4th-year IT Engineering student with 3+ years of hands-on experience in full-stack development and AI integration. Demonstrated success in delivering 10+ projects and integrating 50+ AI models into production systems. Active contributor to KhmerCoder, Cambodia’s largest developer community. Skilled in building scalable web apps, intelligent chatbots, and cross-platform mobile solutions.
+      </div>
+      <div style={{ marginTop: 8 }}>
+        <span style={{ fontWeight: 600 }}>Objective:</span> Seeking graduate-level software development roles to leverage my technical expertise and passion for innovation in impactful projects.
+      </div>
+    </div>
+
+    {/* Education */}
+    <div style={sectionStyle}>
+      <div style={subheadingStyle}>🎓 EDUCATION</div>
+      <div style={labelStyle}>Bachelor of IT Engineering</div> (Expected 2026)
+      <div>Royal University of Phnom Penh — Year 4</div>
+      <div style={{ fontSize: 13, color: '#6b7280' }}>Relevant Coursework: Data Structures, Algorithms, Database Systems, Software Engineering, Machine Learning</div>
+    </div>
+
+    {/* Technical Skills */}
+    <div style={sectionStyle}>
+      <div style={subheadingStyle}>🛠️ TECHNICAL SKILLS</div>
+      <ul style={listStyle}>
+        <li><span style={bullet}>•</span><b>Languages:</b> TypeScript/JavaScript (93%), Python (88%), Dart</li>
+        <li><span style={bullet}>•</span><b>Frontend:</b> React.js, Next.js (95%), HTML5, CSS3, Tailwind CSS</li>
+        <li><span style={bullet}>•</span><b>Backend:</b> Node.js, Express.js (90%), RESTful APIs, GraphQL</li>
+        <li><span style={bullet}>•</span><b>Databases:</b> MongoDB, PostgreSQL, Firebase</li>
+        <li><span style={bullet}>•</span><b>Mobile:</b> React Native (85%), Flutter (85%), PWA</li>
+        <li><span style={bullet}>•</span><b>AI/ML:</b> OpenAI, Google Gemini, DeepSeek (50+ models), Chatbot APIs (Telegram, Discord.js)</li>
+        <li><span style={bullet}>•</span><b>DevOps/Cloud:</b> AWS (80%), Vercel, Netlify, Docker, GitHub Actions (CI/CD), Git</li>
+      </ul>
+    </div>
+
+    {/* Project Experience */}
+    <div style={sectionStyle}>
+      <div style={subheadingStyle}>💼 PROJECT EXPERIENCE</div>
+      <div style={{ marginBottom: 10 }}>
+        <div style={labelStyle}>Polymind – Multi-Modal AI Telegram Bot</div> (2023–Present)
+        <div style={{ fontSize: 13, color: '#6b7280' }}>Lead Developer | Python, Telegram API, AI/ML</div>
+        <ul style={listStyle}>
+          <li><span style={bullet}>•</span>Integrated 50+ advanced AI models (Gemini, DeepSeek, OpenRouter) for intelligent conversations</li>
+          <li><span style={bullet}>•</span>Serves 1,000+ active users with 99.9% uptime and sub-second response times</li>
+          <li><span style={bullet}>•</span>Built multi-model routing, context management, and real-time processing</li>
+          <li><span style={bullet}>•</span><a href="https://t.me/Gemini_AIAssistBot" style={{ color: '#2563eb' }}>Live Demo</a></li>
+        </ul>
+      </div>
+      <div style={{ marginBottom: 10 }}>
+        <div style={labelStyle}>Gemini AI Web Chatbot</div> (2023)
+        <div style={{ fontSize: 13, color: '#6b7280' }}>Full-Stack Developer | React, Node.js, Google AI, TypeScript</div>
+        <ul style={listStyle}>
+          <li><span style={bullet}>•</span>Developed a modern, responsive web chatbot with real-time messaging and context-aware conversations</li>
+          <li><span style={bullet}>•</span>Implemented backend with Google AI integration and robust session management</li>
+        </ul>
+      </div>
+      <div>
+        <div style={labelStyle}>Coffee Corner Mobile App</div> (2022)
+        <div style={{ fontSize: 13, color: '#6b7280' }}>Android Developer | React Native, MongoDB, TypeScript</div>
+        <ul style={listStyle}>
+          <li><span style={bullet}>•</span>Built an Android app for coffee shop management and customer engagement</li>
+          <li><span style={bullet}>•</span>Features: order management, loyalty system, push notifications, offline-first architecture</li>
+        </ul>
+      </div>
+    </div>
+
+    {/* Achievements */}
+    <div style={sectionStyle}>
+      <div style={subheadingStyle}>🏆 ACHIEVEMENTS</div>
+      <ul style={listStyle}>
+        <li><span style={bullet}>•</span>Delivered 10+ successful web and mobile projects</li>
+        <li><span style={bullet}>•</span>Integrated 50+ AI models into production applications</li>
+        <li><span style={bullet}>•</span>100% project success rate—projects met or exceeded client expectations</li>
+        <li><span style={bullet}>•</span>Active contributor and mentor in the <a href="https://khmercoder.com/teams" style={{ color: '#2563eb' }}>KhmerCoder community</a></li>
+      </ul>
+    </div>
+
+    {/* Experience */}
+    <div style={sectionStyle}>
+      <div style={subheadingStyle}>💻 EXPERIENCE</div>
+      <div style={labelStyle}>Full Stack Developer</div> | Freelance & Open Source | 2022–Present
+      <ul style={listStyle}>
+        <li><span style={bullet}>•</span>Developed and maintained multiple web/mobile apps using modern stacks</li>
+        <li><span style={bullet}>•</span>Collaborated with international teams on open-source/community projects</li>
+        <li><span style={bullet}>•</span>Implemented AI-powered features to enhance user engagement</li>
+        <li><span style={bullet}>•</span>Mentored junior developers through KhmerCoder programs</li>
+      </ul>
+    </div>
+
+    {/* Additional Qualifications */}
+    <div style={sectionStyle}>
+      <div style={subheadingStyle}>🌍 ADDITIONAL QUALIFICATIONS</div>
+      <ul style={listStyle}>
+        <li><span style={bullet}>•</span><b>Languages:</b> English (Fluent), Khmer (Native)</li>
+        <li><span style={bullet}>•</span><b>Community:</b> KhmerCoder team member, open source contributor, tech mentor</li>
+        <li><span style={bullet}>•</span><b>Certifications:</b> Ongoing self-directed learning in AI/ML and cloud computing</li>
+      </ul>
+    </div>
+
+    {/* Career Objectives */}
+    <div style={sectionStyle}>
+      <div style={subheadingStyle}>🎯 CAREER OBJECTIVES</div>
+      <div>Seeking graduate developer roles in innovative companies to:</div>
+      <ul style={listStyle}>
+        <li><span style={bullet}>•</span>Build impactful products with full-stack skills</li>
+        <li><span style={bullet}>•</span>Contribute to AI-driven and emerging tech projects</li>
+        <li><span style={bullet}>•</span>Collaborate with experienced teams to solve complex challenges</li>
+        <li><span style={bullet}>•</span>Continue professional growth and make meaningful contributions</li>
+      </ul>
+      <div style={{ fontSize: 13, color: '#6b7280', marginTop: 4 }}>Availability: Immediate upon graduation (2026) | Open to internships and part-time roles</div>
+    </div>
+
+    {/* Contact */}
+    <div style={{ ...sectionStyle, borderBottom: 'none' }}>
+      <div style={subheadingStyle}>📞 LET'S CONNECT</div>
+      <div>I’m eager to discuss how my technical skills, project experience, and passion for innovation can contribute to your team’s success.</div>
+      <div style={{ marginTop: 6 }}>📧 rosexmee1122@gmail.com</div>
+      <div>📱 +855 96 206 4081 (Available 9–5 GMT+7)</div>
+    </div>
+
+    {/* Footer */}
+    <div style={{ textAlign: 'center', fontSize: 13, color: '#6b7280', marginTop: 24 }}>
+      Ready to bring fresh perspectives, proven technical abilities, and a passion for learning to your development team.
+    </div>
+  </div>
+);
+
