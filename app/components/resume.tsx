@@ -1,110 +1,183 @@
-import React, { useState } from 'react';
-import { Badge } from 'react-daisyui';
-import ProgressBar from '@ramonak/react-progress-bar';
-import { Link } from 'react-router';
-import { FaReact, FaNodeJs, FaPython, FaAws } from 'react-icons/fa';
-import { SiTypescript, SiFlutter } from 'react-icons/si';
-import { MdOutlineStar, MdOutlineRocketLaunch } from 'react-icons/md';
-import { GiArtificialIntelligence } from 'react-icons/gi';
-import { HiOutlineBadgeCheck } from 'react-icons/hi';
-import { usePDFDownload } from '../hooks/usePDFDownload';
+import React, { useState } from "react";
+import { Badge } from "react-daisyui";
+import ProgressBar from "@ramonak/react-progress-bar";
+import { Link } from "react-router";
+import { FaReact, FaNodeJs, FaPython, FaAws } from "react-icons/fa";
+import { SiTypescript, SiFlutter } from "react-icons/si";
+import { MdOutlineStar, MdOutlineRocketLaunch } from "react-icons/md";
+import { GiArtificialIntelligence } from "react-icons/gi";
+import { HiOutlineBadgeCheck } from "react-icons/hi";
+import { usePDFDownload } from "../hooks/usePDFDownload";
 
 const Resume: React.FC = () => {
   const [isDownloading, setIsDownloading] = useState(false);
   const { downloadPDF } = usePDFDownload();
   const handleDownloadPDF = async () => {
     setIsDownloading(true);
-    const success = await downloadPDF('resume-capture-root', 'Phon_Ramy_Resume.pdf');
+    const success = await downloadPDF(
+      "resume-capture-root",
+      "Phon_Ramy_Resume.pdf",
+    );
     if (success) {
-      console.log('PDF downloaded successfully');
+      console.log("PDF downloaded successfully");
     } else {
-      console.error('Failed to download PDF');
+      console.error("Failed to download PDF");
     }
     setIsDownloading(false);
   };
 
   const skills = [
-    { name: 'TypeScript / JavaScript', category: 'Languages', level: 93, icon: <SiTypescript className="text-blue-400" /> },
-    { name: 'Python', category: 'Languages', level: 88, icon: <FaPython className="text-yellow-400" /> },
-    { name: 'C++ / Java', category: 'Languages', level: 75, icon: <MdOutlineStar className="text-yellow-400" /> },
-    { name: 'React.js / Next.js', category: 'Frontend', level: 95, icon: <FaReact className="text-cyan-400" /> },
-    { name: 'HTML5 / CSS3 / Tailwind', category: 'Frontend', level: 90, icon: <MdOutlineStar className="text-pink-400" /> },
-    { name: 'Node.js / Express', category: 'Backend', level: 90, icon: <FaNodeJs className="text-green-500" /> },
-    { name: 'MongoDB / PostgreSQL / MySQL', category: 'Databases', level: 85, icon: <MdOutlineRocketLaunch className="text-pink-400" /> },
-    { name: 'React Native (Expo) / Android', category: 'Mobile', level: 85, icon: <SiFlutter className="text-blue-300" /> },
-    { name: 'OpenAI / Google Gemini / LangChain', category: 'AI/ML', level: 88, icon: <GiArtificialIntelligence className="text-purple-400" /> },
-    { name: 'AWS / Docker / CI/CD', category: 'DevOps', level: 80, icon: <FaAws className="text-orange-400" /> },
+    {
+      name: "TypeScript / JavaScript",
+      category: "Languages",
+      level: 93,
+      icon: <SiTypescript className="text-blue-400" />,
+    },
+    {
+      name: "Python",
+      category: "Languages",
+      level: 88,
+      icon: <FaPython className="text-yellow-400" />,
+    },
+    {
+      name: "C++ / Java",
+      category: "Languages",
+      level: 75,
+      icon: <MdOutlineStar className="text-yellow-400" />,
+    },
+    {
+      name: "React.js / Next.js",
+      category: "Frontend",
+      level: 95,
+      icon: <FaReact className="text-cyan-400" />,
+    },
+    {
+      name: "HTML5 / CSS3 / Tailwind",
+      category: "Frontend",
+      level: 90,
+      icon: <MdOutlineStar className="text-pink-400" />,
+    },
+    {
+      name: "Node.js / Express",
+      category: "Backend",
+      level: 90,
+      icon: <FaNodeJs className="text-green-500" />,
+    },
+    {
+      name: "MongoDB / PostgreSQL / MySQL",
+      category: "Databases",
+      level: 85,
+      icon: <MdOutlineRocketLaunch className="text-pink-400" />,
+    },
+    {
+      name: "React Native (Expo) / Android",
+      category: "Mobile",
+      level: 85,
+      icon: <SiFlutter className="text-blue-300" />,
+    },
+    {
+      name: "OpenAI / Google Gemini / LangChain",
+      category: "AI/ML",
+      level: 88,
+      icon: <GiArtificialIntelligence className="text-purple-400" />,
+    },
+    {
+      name: "AWS / Docker / CI/CD",
+      category: "DevOps",
+      level: 80,
+      icon: <FaAws className="text-orange-400" />,
+    },
   ];
 
   const achievements = [
     {
-      number: '10+',
-      label: 'Projects Completed',
-      icon: <MdOutlineRocketLaunch className="text-pink-400 text-2xl mx-auto" />,
+      number: "10+",
+      label: "Projects Completed",
+      icon: (
+        <MdOutlineRocketLaunch className="text-pink-400 text-2xl mx-auto" />
+      ),
     },
     {
-      number: '50+',
-      label: 'AI Models Integrated',
-      icon: <GiArtificialIntelligence className="text-purple-400 text-2xl mx-auto" />,
+      number: "50+",
+      label: "AI Models Integrated",
+      icon: (
+        <GiArtificialIntelligence className="text-purple-400 text-2xl mx-auto" />
+      ),
     },
     {
-      number: '3+',
-      label: 'Years Experience',
+      number: "3+",
+      label: "Years Experience",
       icon: <MdOutlineStar className="text-yellow-400 text-2xl mx-auto" />,
     },
     {
-      number: '100%',
-      label: 'Client Satisfaction',
+      number: "100%",
+      label: "Client Satisfaction",
       icon: <HiOutlineBadgeCheck className="text-green-400 text-2xl mx-auto" />,
     },
   ];
 
   const experiences = [
     {
-      title: 'Full Stack Developer',
-      company: 'Open Source / KhmerCoder',
-      period: '2023 - Present',
-      description: 'Actively contribute to open-source projects and collaborate with the KhmerCoder community to develop and maintain web applications using modern stacks.',
-      achievements: ['Open-source contributor', 'Collaborated on community projects', 'Maintained web application features'],
+      title: "Full Stack Developer",
+      company: "Open Source / KhmerCoder",
+      period: "2023 - Present",
+      description:
+        "Actively contribute to open-source projects and collaborate with the KhmerCoder community to develop and maintain web applications using modern stacks.",
+      achievements: [
+        "Open-source contributor",
+        "Collaborated on community projects",
+        "Maintained web application features",
+      ],
     },
   ];
 
   const projects = [
     {
-      title: 'Polymind - Multi-Modal AI Telegram Bot',
-      tech: 'Lead Developer',
+      title: "Polymind - Multi-Modal AI Telegram Bot",
+      tech: "Lead Developer",
       description:
-        'Developed an advanced AI assistant integrating 50+ models (Gemini, DeepSeek, OpenRouter) to serve thousands of users with high reliability.',
-      techStack: ['Python', 'Telegram Bot API', 'Docker', 'Heroku', 'Whisper', 'FFmpeg'],
-      github: 'https://github.com/Remy2404',
-      demo: 'https://t.me/Gemini_AIAssistBot',
-      period: '2023 - Present',
+        "Developed an advanced AI assistant integrating 50+ models (Gemini, DeepSeek, OpenRouter) to serve thousands of users with high reliability.",
+      techStack: [
+        "Python",
+        "Telegram Bot API",
+        "Docker",
+        "Heroku",
+        "Whisper",
+        "FFmpeg",
+      ],
+      github: "https://github.com/Remy2404",
+      demo: "https://t.me/Gemini_AIAssistBot",
+      period: "2023 - Present",
       highlights: [
-        'Built multi-model routing and context management',
-        'Achieved 99.9% uptime and sub-second responses',
+        "Built multi-model routing and context management",
+        "Achieved 99.9% uptime and sub-second responses",
       ],
     },
     {
-      title: 'Gemini AI Web Chatbot',
-      tech: 'Full-Stack Developer',
+      title: "Gemini AI Web Chatbot",
+      tech: "Full-Stack Developer",
       description:
-        'Built a modern web-based AI chatbot with responsive React UI and real-time messaging backed by a Node.js server integrating Google AI.',
-      techStack: ['React', 'Node.js', 'TypeScript', 'Google AI Platform'],
-      github: 'https://github.com/Remy2404',
+        "Built a modern web-based AI chatbot with responsive React UI and real-time messaging backed by a Node.js server integrating Google AI.",
+      techStack: ["React", "Node.js", "TypeScript", "Google AI Platform"],
+      github: "https://github.com/Remy2404",
       demo: null,
-      period: '2023',
-      highlights: ['Real-time messaging', 'Session & context management'],
+      period: "2023",
+      highlights: ["Real-time messaging", "Session & context management"],
     },
     {
-      title: 'Coffee Corner Mobile App',
-      tech: 'React Native Developer',
+      title: "Coffee Corner Mobile App",
+      tech: "React Native Developer",
       description:
-        'Cross-platform mobile app for a local coffee shop with order management and loyalty features.',
-      techStack: ['React Native', 'MongoDB', 'TypeScript', 'Expo'],
-      github: 'https://github.com/Remy2404',
+        "Cross-platform mobile app for a local coffee shop with order management and loyalty features.",
+      techStack: ["React Native", "MongoDB", "TypeScript", "Expo"],
+      github: "https://github.com/Remy2404",
       demo: null,
-      period: '2022',
-      highlights: ['Order tracking', 'Points-based loyalty system', 'Push notifications'],
+      period: "2022",
+      highlights: [
+        "Order tracking",
+        "Points-based loyalty system",
+        "Push notifications",
+      ],
     },
   ];
 
@@ -122,7 +195,10 @@ const Resume: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen relative overflow-x-hidden bg-[url('/gojo.png')] bg-cover bg-center" id="resume-capture-root">
+    <div
+      className="min-h-screen relative overflow-x-hidden bg-[url('/gojo.png')] bg-cover bg-center"
+      id="resume-capture-root"
+    >
       {/* Floating Particles (hydration-safe, client-only) */}
       {(() => {
         const [particles, setParticles] = React.useState<Array<{
@@ -431,10 +507,11 @@ const Resume: React.FC = () => {
                 About Me
               </h3>
               <p className="text-white/90 leading-relaxed">
-                I am a passionate full stack developer and a 4th year IT engineering student dedicated to building
-                elegant, high-performance applications for both web and mobile
-                platforms. My purpose is to craft digital solutions that are not
-                only robust and scalable, but also intuitive and delightful for
+                I am a passionate full stack developer and a 4th year IT
+                engineering student dedicated to building elegant,
+                high-performance applications for both web and mobile platforms.
+                My purpose is to craft digital solutions that are not only
+                robust and scalable, but also intuitive and delightful for
                 users. With a proven track record of delivering 10+ successful
                 projects, I thrive on solving complex problems and embracing new
                 technologies.
@@ -756,7 +833,8 @@ const Resume: React.FC = () => {
             </span>
           </p>
           <p className="text-white/60 text-sm mt-2">
-            Fresh graduate ready to bring passion, technical skills, and eagerness to learn to a dynamic development team.
+            Fresh graduate ready to bring passion, technical skills, and
+            eagerness to learn to a dynamic development team.
           </p>
         </div>
       </div>

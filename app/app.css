@@ -1,5 +1,5 @@
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 @import "tailwindcss";
 
@@ -7,8 +7,8 @@
   /* --- Cosmic Emerald Theme --- */
 
   /* Custom fonts & breakpoints (updated to use Google Fonts) */
-  --font-family-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif;
-  --font-family-display: 'Satoshi', sans-serif;
+  --font-family-sans: "Roboto", ui-sans-serif, system-ui, sans-serif;
+  --font-family-display: "Satoshi", sans-serif;
   --breakpoint-3xl: 1920px;
 
   /* New Neon Accent Colors */
@@ -214,7 +214,8 @@ body {
 }
 
 @keyframes animate-float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
   33% {

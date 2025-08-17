@@ -24,9 +24,16 @@ const ExperienceTimeline: React.FC = () => {
         "Independently designed and developed full-stack applications while pursuing academic studies.",
         "Focused on modern web technologies, AI integration, and user-centered design principles.",
         "Built 15+ personal projects and contributed to open-source community.",
-        "Continuously learning and applying new frameworks and best practices."
+        "Continuously learning and applying new frameworks and best practices.",
       ],
-      skills: ["React", "Node.js", "MongoDB", "Express.js", "Tailwind CSS", "AI/ML"],
+      skills: [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Express.js",
+        "Tailwind CSS",
+        "AI/ML",
+      ],
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
           <path
@@ -112,8 +119,7 @@ const ExperienceTimeline: React.FC = () => {
           <span className="gradient-text">Experience & Journey</span>
         </h2>
         <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
-          My journey and the experiences that shaped my development
-          career
+          My journey and the experiences that shaped my development career
         </p>
       </div>
 

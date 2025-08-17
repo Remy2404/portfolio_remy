@@ -1,4 +1,3 @@
-
 # Phon Ramy – Professional Portfolio
 
 This is a modern, glassmorphism-themed portfolio website for Phon Ramy, built with React, TypeScript, Tailwind CSS, and daisyUI. It features a galaxy/starfield hero section, animated fire border, timeline, skills, and more.
