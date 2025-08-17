@@ -12,7 +12,6 @@ import { usePDFDownload } from '../hooks/usePDFDownload';
 const Resume: React.FC = () => {
   const [isDownloading, setIsDownloading] = useState(false);
   const { downloadPDF } = usePDFDownload();
-
   const handleDownloadPDF = async () => {
     setIsDownloading(true);
     const success = await downloadPDF('resume-capture-root', 'Phon_Ramy_Resume.pdf');
@@ -23,43 +22,18 @@ const Resume: React.FC = () => {
     }
     setIsDownloading(false);
   };
+
   const skills = [
-    {
-      name: 'React / Next.js',
-      category: 'Frontend',
-      level: 95,
-      icon: <FaReact className="text-cyan-400" />,
-    },
-    {
-      name: 'Node.js / Express',
-      category: 'Backend',
-      level: 90,
-      icon: <FaNodeJs className="text-green-500" />,
-    },
-    {
-      name: 'TypeScript / JavaScript',
-      category: 'Language',
-      level: 93,
-      icon: <SiTypescript className="text-blue-400" />,
-    },
-    {
-      name: 'Python / AI/ML',
-      category: 'AI/ML',
-      level: 88,
-      icon: <FaPython className="text-yellow-400" />,
-    },
-    {
-      name: 'React Native / Flutter',
-      category: 'Mobile',
-      level: 85,
-      icon: <SiFlutter className="text-blue-300" />,
-    },
-    {
-      name: 'Docker / AWS',
-      category: 'DevOps',
-      level: 80,
-      icon: <FaAws className="text-orange-400" />,
-    },
+    { name: 'TypeScript / JavaScript', category: 'Languages', level: 93, icon: <SiTypescript className="text-blue-400" /> },
+    { name: 'Python', category: 'Languages', level: 88, icon: <FaPython className="text-yellow-400" /> },
+    { name: 'C++ / Java', category: 'Languages', level: 75, icon: <MdOutlineStar className="text-yellow-400" /> },
+    { name: 'React.js / Next.js', category: 'Frontend', level: 95, icon: <FaReact className="text-cyan-400" /> },
+    { name: 'HTML5 / CSS3 / Tailwind', category: 'Frontend', level: 90, icon: <MdOutlineStar className="text-pink-400" /> },
+    { name: 'Node.js / Express', category: 'Backend', level: 90, icon: <FaNodeJs className="text-green-500" /> },
+    { name: 'MongoDB / PostgreSQL / MySQL', category: 'Databases', level: 85, icon: <MdOutlineRocketLaunch className="text-pink-400" /> },
+    { name: 'React Native (Expo) / Android', category: 'Mobile', level: 85, icon: <SiFlutter className="text-blue-300" /> },
+    { name: 'OpenAI / Google Gemini / LangChain', category: 'AI/ML', level: 88, icon: <GiArtificialIntelligence className="text-purple-400" /> },
+    { name: 'AWS / Docker / CI/CD', category: 'DevOps', level: 80, icon: <FaAws className="text-orange-400" /> },
   ];
 
   const achievements = [
@@ -88,50 +62,60 @@ const Resume: React.FC = () => {
   const experiences = [
     {
       title: 'Full Stack Developer',
-      company: 'Open Source',
-      period: '2022 - Present',
-      description: 'Designed and developed robust applications with focus on user experience. Collaborated on open-source projects, contributing to community-driven development.',
-      achievements: ['10+ projects delivered', 'AI integration specialist', 'Community contributor'],
+      company: 'Open Source / KhmerCoder',
+      period: '2023 - Present',
+      description: 'Actively contribute to open-source projects and collaborate with the KhmerCoder community to develop and maintain web applications using modern stacks.',
+      achievements: ['Open-source contributor', 'Collaborated on community projects', 'Maintained web application features'],
     },
   ];
 
   const projects = [
     {
-      title: 'Telegram Chat Bot (Polymind)',
-      tech: 'AI Integration',
-      description: 'Powerful multi-modal Telegram bot built with Gemini, DeepSeek, OpenRouter, and over 50 cutting-edge AI models.',
-      techStack: ['Python', 'Telegram API', 'AI/ML', 'OpenRouter'],
+      title: 'Polymind - Multi-Modal AI Telegram Bot',
+      tech: 'Lead Developer',
+      description:
+        'Developed an advanced AI assistant integrating 50+ models (Gemini, DeepSeek, OpenRouter) to serve thousands of users with high reliability.',
+      techStack: ['Python', 'Telegram Bot API', 'Docker', 'Heroku', 'Whisper', 'FFmpeg'],
       github: 'https://github.com/Remy2404',
       demo: 'https://t.me/Gemini_AIAssistBot',
+      period: '2023 - Present',
+      highlights: [
+        'Built multi-model routing and context management',
+        'Achieved 99.9% uptime and sub-second responses',
+      ],
     },
     {
-      title: 'Gemini AI chatbot',
-      tech: 'AI Chatbot',
-      description: 'Built comprehensive AI-powered chatbot with modern architecture and cutting-edge machine learning capabilities.',
-      techStack: ['React', 'Node.js', 'Google AI', 'TypeScript'],
+      title: 'Gemini AI Web Chatbot',
+      tech: 'Full-Stack Developer',
+      description:
+        'Built a modern web-based AI chatbot with responsive React UI and real-time messaging backed by a Node.js server integrating Google AI.',
+      techStack: ['React', 'Node.js', 'TypeScript', 'Google AI Platform'],
       github: 'https://github.com/Remy2404',
       demo: null,
+      period: '2023',
+      highlights: ['Real-time messaging', 'Session & context management'],
     },
     {
-      title: 'Coffee Corner',
-      tech: 'Mobile Developments',
-      description: 'Cross-platform mobile application for coffee shop management and customer engagement.',
-      techStack: ['React Native', 'Node.js', 'MongoDB', 'TypeScript'],
+      title: 'Coffee Corner Mobile App',
+      tech: 'React Native Developer',
+      description:
+        'Cross-platform mobile app for a local coffee shop with order management and loyalty features.',
+      techStack: ['React Native', 'MongoDB', 'TypeScript', 'Expo'],
       github: 'https://github.com/Remy2404',
       demo: null,
+      period: '2022',
+      highlights: ['Order tracking', 'Points-based loyalty system', 'Push notifications'],
     },
   ];
 
   const education = [
     {
       degree: 'Bachelor of IT Engineering',
-      school: 'Royal University of Phnom Penh',
-      period: '2022-2026',
-    },
-    {
-      degree: 'High School Diploma',
-      school: 'Chea Sim Samaki High School',
-      period: '2022',
+              school: 'Royal University of Phnom Penh • Phnom Penh, Cambodia',
+              period: 'Expected Graduation: 2026',
+              details:
+                'Relevant Coursework: Data Structures & Algorithms, Database Systems, Software Engineering, Object-Oriented Programming',
+              
     },
   ];
 
