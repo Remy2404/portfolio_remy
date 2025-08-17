@@ -110,12 +110,14 @@ const Resume: React.FC = () => {
 
   const education = [
     {
-      degree: 'Bachelor of IT Engineering',
-              school: 'Royal University of Phnom Penh • Phnom Penh, Cambodia',
-              period: 'Expected Graduation: 2026',
-              details:
-                'Relevant Coursework: Data Structures & Algorithms, Database Systems, Software Engineering, Object-Oriented Programming',
-              
+      degree: "Bachelor of IT Engineering",
+      school: "Royal University of Phnom Penh",
+      period: "2022-2026",
+    },
+    {
+      degree: "High School Diploma",
+      school: "Chea Sim Samaki High School",
+      period: "2022",
     },
   ];
 
@@ -750,7 +752,7 @@ const Resume: React.FC = () => {
             •
             <span className="text-purple-400 font-semibold">
               {" "}
-              Available for Internships
+              Available for Internships & job opportunities
             </span>
           </p>
           <p className="text-white/60 text-sm mt-2">
