@@ -1,10 +1,10 @@
 import type { Route } from "./+types/home";
 import Hero from "~/components/Hero";
-import Skills from "~/components/Skills";
-import ExperienceTimeline from "~/components/ExperienceTimeline";
 import Projects from "~/components/Projects";
 import ContactForm from "~/components/ContactForm";
 import ClientOnly from "~/components/ClientOnly";
+import { LazyTimelineSection, LazySkillsSection } from "~/components/LazyComponents";
+import PerformanceMonitor from "~/components/PerformanceMonitor";
 import Navbar from "./Navbar";
 
 export function meta({}: Route.MetaArgs) {
@@ -35,12 +35,35 @@ export function meta({}: Route.MetaArgs) {
       content: "https://avatars.githubusercontent.com/u/136186665?v=4",
     },
     { name: "twitter:card", content: "summary_large_image" },
+    // Performance hints
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+    { name: "theme-color", content: "#8b5cf6" },
+  ];
+}
+
+// Preload critical resources
+export function links() {
+  return [
+    // Preload hero image
+    {
+      rel: "preload",
+      href: "https://avatars.githubusercontent.com/u/136186665?v=4",
+      as: "image",
+      type: "image/jpeg",
+    },
+    // DNS prefetch for external resources
+    { rel: "dns-prefetch", href: "//avatars.githubusercontent.com" },
+    { rel: "dns-prefetch", href: "//github.com" },
+    { rel: "dns-prefetch", href: "//linkedin.com" },
   ];
 }
 
 export default function Home() {
   return (
     <div className="min-h-screen" data-theme="glassmorphism">
+      {/* Performance monitoring in development */}
+      {process.env.NODE_ENV === 'development' && <PerformanceMonitor />}
+      
       {/* Navigation */}
       <Navbar />
 
@@ -49,18 +72,17 @@ export default function Home() {
         <Hero />
       </div>
 
-      {/* Skills Section */}
-      {/* 2. Wrap the Skills component */}
+      {/* Skills Section - Lazy loaded */}
       <div id="skills">
         <ClientOnly>
-          <Skills />
+          <LazySkillsSection />
         </ClientOnly>
       </div>
 
-      {/* Experience Section */}
+      {/* Experience Section - Lazy loaded */}
       <div id="experience">
         <ClientOnly>
-          <ExperienceTimeline />
+          <LazyTimelineSection />
         </ClientOnly>
       </div>
 
