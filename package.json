@@ -8,7 +8,8 @@
     "check-format": "prettier --check .",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc"
+    "typecheck": "react-router typegen && tsc",
+    "optimize-images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -53,6 +54,7 @@
     "@types/react-dom": "^19.1.2",
     "@types/react-vertical-timeline-component": "^3.3.6",
     "postcss-preset-env": "^10.2.4",
+    "sharp": "^0.34.4",
     "tailwindcss": "^4.1.4",
     "typescript": "^5.8.3",
     "vite": "^6.3.3",

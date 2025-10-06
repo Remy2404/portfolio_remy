@@ -196,7 +196,7 @@ const Resume: React.FC = () => {
 
   return (
     <div
-      className="min-h-screen relative overflow-x-hidden bg-[url('/gojo.png')] bg-cover bg-center"
+      className="min-h-screen relative overflow-x-hidden bg-cover bg-center"
       id="resume-capture-root"
     >
       {/* Floating Particles (hydration-safe, client-only) */}
@@ -294,11 +294,21 @@ const Resume: React.FC = () => {
             {/* Profile Image */}
             <div className="relative">
               <div className="w-32 h-32 rounded-full overflow-hidden glass p-1 hover:scale-105 transition-transform duration-300">
-                <img
-                  src="/profile.png"
-                  alt="Phon Ramy"
-                  className="w-full h-full rounded-full object-cover"
-                />
+                <picture>
+                  <source
+                    srcSet="/profile-small.webp 150w, /profile-medium.webp 300w, /profile.webp 500w"
+                    sizes="(max-width: 768px) 128px, 150px"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/profile.png"
+                    alt="Phon Ramy"
+                    className="w-full h-full rounded-full object-cover"
+                    loading="eager"
+                    width="128"
+                    height="128"
+                  />
+                </picture>
               </div>
             </div>
 
